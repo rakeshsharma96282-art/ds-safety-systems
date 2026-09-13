@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS Safety Systems</title>
+    <title>DSF Fire Safety Device</title>
     <!-- Inter Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,84 +20,91 @@
             font-family: 'Inter', sans-serif;
             letter-spacing: -0.01em;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen py-8">
+<body class="bg-gray-50 min-h-screen py-8">
 
-    <!-- Navbar inside a centered rectangular air box -->
-    <div class="max-w-5xl mx-auto px-4 mb-16">
-        <div class="navbar bg-base-100 shadow-md rounded-2xl px-6 py-2 border border-gray-200">
+    <!-- Navbar inside a wider, perfectly proportioned rectangular container box -->
+    <div class="max-w-6xl mx-auto px-4 mb-16 animate-fade-in">
+        <div class="navbar bg-base-100 shadow-lg rounded-2xl px-8 py-3 border border-gray-200">
             
             <!-- Logo / Brand Section -->
             <div class="navbar-start">
-                <a class="flex items-center gap-2 text-base font-bold text-gray-900">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    DS Safety
+                <a class="flex items-center gap-3 text-lg font-bold text-gray-900">
+                    <img src="DSF_logo_small.png" alt="DSF Logo" class="w-10 h-10 object-contain">
+                    <span class="tracking-tight">DSF Fire Safety</span>
                 </a>
             </div>
 
-            <!-- Center Menu Links with Flowbite-style Dropdowns -->
+            <!-- Center Menu Links with Dropdowns -->
             <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 font-medium text-sm text-gray-700 gap-1">
-                    <li><a class="font-medium hover:text-blue-600">Home</a></li>
+                <ul class="menu menu-horizontal px-1 font-medium text-sm text-gray-700 gap-2">
+                    <li><a class="font-medium hover:text-red-600 transition-colors">Home</a></li>
                     
                     <!-- Dropdown Menu -->
                     <li class="relative dropdown dropdown-hover">
-                        <tabindex="0" class="flex items-center gap-1 font-medium hover:text-blue-600 cursor-pointer py-2 px-3">
-                            Dropdown 
+                        <tabindex="0" class="flex items-center gap-1 font-medium hover:text-red-600 cursor-pointer py-2 px-3 transition-colors">
+                            Products 
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                         </tabindex>
                         <ul class="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-xl w-48 border border-gray-100 mt-1">
-                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Dashboard</a></li>
-                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Dropdown</a></li>
-                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Earnings</a></li>
-                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Sign out</a></li>
+                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Fire Extinguishers</a></li>
+                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Safety Devices</a></li>
+                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Monitoring Alarms</a></li>
+                            <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Industrial Gear</a></li>
                         </ul>
                     </li>
 
-                    <li><a class="font-medium hover:text-blue-600">Services</a></li>
-                    <li><a class="font-medium hover:text-blue-600">Pricing</a></li>
-                    <li><a class="font-medium hover:text-blue-600">Contact</a></li>
+                    <li><a class="font-medium hover:text-red-600 transition-colors">Services</a></li>
+                    <li><a class="font-medium hover:text-red-600 transition-colors">Pricing</a></li>
+                    <li><a class="font-medium hover:text-red-600 transition-colors">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Right Side Action Buttons -->
-            <div class="navbar-end gap-4">
-                <a class="hidden sm:inline-block text-sm font-medium text-gray-600 hover:text-black">Sign in</a>
-                <a class="btn btn-neutral rounded-lg px-5 text-sm font-semibold h-10 min-h-0 bg-black text-white hover:bg-gray-800 border-none">Get started</a>
+            <!-- Right Side Action Buttons (Equal Width & Styling) -->
+            <div class="navbar-end gap-3">
+                <a class="btn btn-outline rounded-lg w-32 text-sm font-semibold h-11 min-h-0 border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all">Sign in</a>
+                <a class="btn btn-neutral rounded-lg w-32 text-sm font-semibold h-11 min-h-0 bg-red-600 text-white hover:bg-red-700 border-none shadow-md transition-all">Get started</a>
             </div>
             
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero max-w-5xl mx-auto my-16 px-4">
+    <!-- Hero Section with Smooth Fade Animation -->
+    <div class="hero max-w-5xl mx-auto my-16 px-4 animate-fade-in">
         <div class="hero-content text-center">
             <div class="max-w-xl">
-                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">Modern Safety Solutions for Your Enterprise</h1>
-                <p class="py-6 text-gray-600 font-normal">Protect your workforce and assets with industry-leading safety protocols, top-tier equipment, and seamless system integrations from DS Safety Systems.</p>
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">Safety Today, Secure Tomorrow</h1>
+                <p class="py-6 text-gray-600 font-normal leading-relaxed">Protect your workforce and enterprise assets with cutting-edge fire safety devices, compliance checks, and automated hazard monitoring systems from DSF.</p>
                 <div class="flex justify-center gap-4">
-                    <button class="btn btn-neutral rounded-lg px-6 font-semibold bg-black text-white border-none hover:bg-gray-800">Explore Products</button>
-                    <button class="btn btn-outline rounded-lg px-6 font-semibold border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400">Contact Us</button>
+                    <button class="btn btn-neutral rounded-lg w-40 font-semibold h-11 min-h-0 bg-red-600 text-white border-none hover:bg-red-700 shadow-md transition-all">Explore Products</button>
+                    <button class="btn btn-outline rounded-lg w-40 font-semibold h-11 min-h-0 border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all">Contact Us</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Services / Features Grid -->
-    <div class="max-w-5xl mx-auto px-4 pb-20">
+    <div class="max-w-5xl mx-auto px-4 pb-20 animate-fade-in">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
+            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 class="text-lg font-bold text-gray-900">Workplace Audits</h3>
-                <p class="text-sm text-gray-500 mt-2 font-normal">Comprehensive compliance checks and hazard evaluations tailored to your industrial setup.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">Comprehensive compliance checks and fire hazard evaluations tailored to your industrial space.</p>
             </div>
-            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
+            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 class="text-lg font-bold text-gray-900">Safety Gear Supply</h3>
-                <p class="text-sm text-gray-500 mt-2 font-normal">High-durability personal protective equipment sourced from globally trusted brands.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">High-durability fire suppression equipment and safety gear sourced from certified brands.</p>
             </div>
-            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
+            <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 class="text-lg font-bold text-gray-900">System Integration</h3>
-                <p class="text-sm text-gray-500 mt-2 font-normal">Automated alarm integrations and real-time safety monitoring network setups.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">Automated alarm integrations and real-time fire safety monitoring network installations.</p>
             </div>
         </div>
     </div>
