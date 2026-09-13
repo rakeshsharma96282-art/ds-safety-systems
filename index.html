@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DS Safety Systems</title>
+    <!-- Inter Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <style>
         body {
-            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.01em;
         }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen py-8">
 
-    <!-- Navbar inside a centered floating card/box (non-pill, rectangular edges with rounded-2xl) -->
+    <!-- Navbar inside a centered rectangular air box -->
     <div class="max-w-5xl mx-auto px-4 mb-16">
         <div class="navbar bg-base-100 shadow-md rounded-2xl px-6 py-2 border border-gray-200">
             
             <!-- Logo / Brand Section -->
             <div class="navbar-start">
-                <a class="flex items-center gap-2 text-base font-bold tracking-tight text-gray-900">
+                <a class="flex items-center gap-2 text-base font-bold text-gray-900">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                     </svg>
@@ -35,7 +43,7 @@
                 <ul class="menu menu-horizontal px-1 font-medium text-sm text-gray-600 gap-1">
                     <li>
                         <details>
-                            <summary class="hover:text-black">Products</summary>
+                            <summary class="font-medium hover:text-black">Products</summary>
                             <ul class="p-2 bg-base-100 shadow-xl rounded-xl w-52 border border-gray-100 mt-2">
                                 <li><a>Analytics</a></li>
                                 <li><a>Monitoring</a></li>
@@ -44,21 +52,21 @@
                     </li>
                     <li>
                         <details>
-                            <summary class="hover:text-black">Resources</summary>
+                            <summary class="font-medium hover:text-black">Resources</summary>
                             <ul class="p-2 bg-base-100 shadow-xl rounded-xl w-52 border border-gray-100 mt-2">
                                 <li><a>Documentation</a></li>
                                 <li><a>Changelog</a></li>
                             </ul>
                         </details>
                     </li>
-                    <li><a>Pricing</a></li>
-                    <li><a>Enterprise</a></li>
+                    <li><a class="font-medium">Pricing</a></li>
+                    <li><a class="font-medium">Enterprise</a></li>
                 </ul>
             </div>
 
             <!-- Right Side Action Buttons -->
             <div class="navbar-end gap-4">
-                <a class="hidden sm:inline-block text-sm font-semibold text-gray-600 hover:text-black">Sign in</a>
+                <a class="hidden sm:inline-block text-sm font-medium text-gray-600 hover:text-black">Sign in</a>
                 <a class="btn btn-neutral rounded-lg px-5 text-sm font-semibold h-10 min-h-0 bg-black text-white hover:bg-gray-800 border-none">Get started</a>
             </div>
             
@@ -69,11 +77,11 @@
     <div class="hero max-w-5xl mx-auto my-16 px-4">
         <div class="hero-content text-center">
             <div class="max-w-xl">
-                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Modern Safety Solutions for Your Enterprise</h1>
-                <p class="py-6 text-gray-600">Protect your workforce and assets with industry-leading safety protocols, top-tier equipment, and seamless system integrations from DS Safety Systems.</p>
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">Modern Safety Solutions for Your Enterprise</h1>
+                <p class="py-6 text-gray-600 font-normal">Protect your workforce and assets with industry-leading safety protocols, top-tier equipment, and seamless system integrations from DS Safety Systems.</p>
                 <div class="flex justify-center gap-4">
-                    <button class="btn btn-neutral rounded-lg px-6 bg-black text-white border-none hover:bg-gray-800">Explore Products</button>
-                    <button class="btn btn-outline rounded-lg px-6 border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400">Contact Us</button>
+                    <button class="btn btn-neutral rounded-lg px-6 font-semibold bg-black text-white border-none hover:bg-gray-800">Explore Products</button>
+                    <button class="btn btn-outline rounded-lg px-6 font-semibold border-gray-300 hover:bg-gray-100 hover:text-black hover:border-gray-400">Contact Us</button>
                 </div>
             </div>
         </div>
@@ -84,15 +92,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
                 <h3 class="text-lg font-bold text-gray-900">Workplace Audits</h3>
-                <p class="text-sm text-gray-500 mt-2">Comprehensive compliance checks and hazard evaluations tailored to your industrial setup.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">Comprehensive compliance checks and hazard evaluations tailored to your industrial setup.</p>
             </div>
             <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
                 <h3 class="text-lg font-bold text-gray-900">Safety Gear Supply</h3>
-                <p class="text-sm text-gray-500 mt-2">High-durability personal protective equipment sourced from globally trusted brands.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">High-durability personal protective equipment sourced from globally trusted brands.</p>
             </div>
             <div class="card bg-base-100 shadow-md p-6 rounded-2xl border border-gray-100">
                 <h3 class="text-lg font-bold text-gray-900">System Integration</h3>
-                <p class="text-sm text-gray-500 mt-2">Automated alarm integrations and real-time safety monitoring network setups.</p>
+                <p class="text-sm text-gray-500 mt-2 font-normal">Automated alarm integrations and real-time safety monitoring network setups.</p>
             </div>
         </div>
     </div>
