@@ -1,120 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS Safety Systems</title>
-    <!-- Inter Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- DaisyUI CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.01em;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .aura-dual {
-            position: relative;
-        }
-        .aura-dual::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            background: inherit;
-            border-radius: inherit;
-            box-shadow: 
-                0 4px 20px rgba(0, 0, 0, 0.08), 
-                0 0 25px 2px rgba(239, 68, 68, 0.15);
-            z-index: -1;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 min-h-screen py-4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Safety Systems | Advanced Fire Protection & Safety Solutions in New Delhi</title>
 
-    <!-- Top Info Bar (matching your screenshot) -->
-    <div class="max-w-6xl mx-auto px-4 mb-3">
-        <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-600 font-medium gap-2">
-            <div class="flex items-center gap-6">
-                <span class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    9818701683
-                </span>
-                <span class="flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    Dssafetysystems@hotmail.com
-                </span>
-                <span class="hidden md:flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    Govind Puri, New Delhi
-                </span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#" class="hover:text-red-600 transition-colors">Client Portal</a>
-                <a href="#" class="text-red-600 font-semibold hover:underline">Contact Us</a>
-            </div>
-        </div>
-    </div>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="DS Safety Systems provides certified fire protection equipment, installation, and Annual Maintenance Contracts (AMC) in New Delhi. Expert safety solutions for commercial and residential properties.">
+  <meta name="keywords" content="Fire Safety Systems, Fire Extinguishers, Fire Alarms, Hydrant Systems, AMC Fire Maintenance, DS Safety Systems Delhi">
 
-    <!-- Main Floating Navbar Container Box with Aura -->
-    <div class="max-w-6xl mx-auto px-4 mb-16 animate-fade-in">
-        <div class="aura-dual">
-            <div class="navbar bg-base-100 shadow-lg rounded-2xl px-8 py-3 border border-gray-200">
-                
-                <!-- Logo & Title Section -->
-                <div class="navbar-start">
-                    <a class="flex items-center gap-3 text-lg font-bold text-gray-900">
-                        <img src="DSF_logo_small.png" alt="DSF Logo" class="w-10 h-10 object-contain">
-                        <span class="tracking-tight text-red-600 font-extrabold text-xl">DS SAFETY SYSTEMS</span>
-                    </a>
-                </div>
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:title" content="DS Safety Systems | Fire Protection Experts">
+  <meta property="og:description" content="Professional fire safety equipment, installation, and AMC services in New Delhi.">
+  <meta property="og:type" content="website">
 
-                <!-- Center Menu Links: Home, About Us, Services, Products -->
-                <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1 font-medium text-sm text-gray-700 gap-2 items-center">
-                        <li><a class="font-medium hover:text-red-600 transition-colors">Home</a></li>
-                        <span class="text-gray-300">|</span>
-                        <li><a class="font-medium hover:text-red-600 transition-colors">About Us</a></li>
-                        <span class="text-gray-300">|</span>
-                        <li><a class="font-medium hover:text-red-600 transition-colors">Services</a></li>
-                        <span class="text-gray-300">|</span>
-                        <!-- Products Dropdown Menu -->
-                        <li class="relative dropdown dropdown-hover">
-                            <tabindex="0" class="flex items-center gap-1 font-medium hover:text-red-600 cursor-pointer py-2 px-3 transition-colors">
-                                Products 
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
-                            </tabindex>
-                            <ul class="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-xl w-48 border border-gray-100 mt-1">
-                                <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Fire Extinguishers</a></li>
-                                <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Safety Devices</a></li>
-                                <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Monitoring Alarms</a></li>
-                                <li><a class="text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Industrial Gear</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+  <!-- Import Outfit Font (Weight 700) and Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-                <!-- Right Side Action Button (Get Quote matching screenshot) -->
-                <div class="navbar-end gap-3">
-                    <a class="btn btn-neutral rounded-lg w-32 text-sm font-semibold h-11 min-h-0 bg-red-600 text-white hover:bg-red-700 border-none shadow-md transition-all">Get Quote</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+  <style>
+    /* Global Reset & Apply Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lato', Arial, sans-serif;
+    }
 
-</body>
-</html>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 12px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .info-item, .top-bar-right > a {
+      opacity: 0;
+      animation: pureFadeIn 1.1s ease forwards;
+    }
+
+    .top-bar-left .info-item:nth-child(1) { animation-delay: 0.1s; }
+    .top-bar-left .info-item:nth-child(2) { animation-delay: 0.25s; }
+    .top-bar-left .info-item:nth-child(3) { animation-delay: 0.4s; }
+    .top-bar-right a:nth-child(1) { animation-delay: 0.55s; }
+    .top-bar-right a:nth-child(2) { animation-delay: 0.7s; }
+
+    @keyframes pureFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .info-item img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .btn-contact {
+      background-color: #d93830;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: #b52b24;
+    }
