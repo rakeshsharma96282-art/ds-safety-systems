@@ -2,11 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DS Safety Systems</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <h1>DS Safety Systems</h1>
-    <p>Welcome to our website!</p>
+<body class="bg-gray-100 min-h-screen pt-8">
+
+    <!-- Floating Pill Navbar Container -->
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="navbar bg-base-100 shadow-xl rounded-full px-6 py-2">
+            
+            <!-- Logo / Brand Section -->
+            <div class="navbar-start">
+                <a class="flex items-center gap-2 text-xl font-bold tracking-tight">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    </svg>
+                    DS Safety
+                </a>
+            </div>
+
+            <!-- Center Menu Links -->
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 font-medium text-gray-600">
+                    <li><a>Products</a></li>
+                    <li><a>Resources</a></li>
+                    <li><a>Pricing</a></li>
+                    <li><a>Enterprise</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Side Action Buttons -->
+            <div class="navbar-end gap-3">
+                <a class="hidden sm:inline-block text-sm font-semibold text-gray-600 hover:text-black">Sign in</a>
+                <a class="btn btn-neutral rounded-full px-5 text-sm font-semibold">Get started</a>
+            </div>
+            
+        </div>
+    </div>
+
 </body>
 </html>
