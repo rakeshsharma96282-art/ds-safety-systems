@@ -191,36 +191,96 @@ body {
     border-color: rgba(255, 255, 255, 0.8);
   }
 }
-/* Responsive Styles for Hero Section (Appended to your CSS file) */
+
+/* Universal Mobile & Fluid Responsiveness Fixes */
 @media (max-width: 768px) {
+  /* Prevent horizontal scrolling and layout breaking */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Utility Bars Layout */
+  .top-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 15px 10px !important;
+    text-align: center !important;
+  }
+
+  .top-bar-left {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .top-bar-right {
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    flex-wrap: wrap;
+  }
+
+  .bottom-bar {
+    padding: 15px 10px !important;
+  }
+
+  .bottom-bar-content {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Hero & Content Sections */
   .hero-section {
-    padding: 40px 15px;
+    padding: 40px 15px !important;
+  }
+
+  .hero-container {
+    width: 100% !important;
+    gap: 30px !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    padding: 0 !important;
   }
 
   .hero-content h1 {
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
   }
 
   .hero-content p {
-    font-size: 16px;
+    font-size: 15px !important;
   }
 
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
   }
 
+  /* Buttons Full-Width on Mobile */
   .btn-contact-fly, 
   .btn-secondary-outline {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
+  /* Statistics Grid Single Column */
   .hero-stats-card {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 20px !important;
+    width: 100% !important;
   }
 }
