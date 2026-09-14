@@ -67,7 +67,7 @@ body {
   align-items: center;
   width: max-content;
   border: none;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.2s;
   cursor: pointer;
