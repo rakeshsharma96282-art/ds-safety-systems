@@ -110,14 +110,14 @@ html, body {
   background-color: #ffffff;
 }
 
-/* Shared Slow Circling Aura Effect for Both Nav Bar and Get a Quote */
+/* Shared Slow Circling Aura Effect with Silver & Red Metallic Shine */
 .aura-wrapper {
   position: relative;
   display: inline-block;
   padding: 3px;
   border-radius: 17.5px;
   overflow: hidden;
-  box-shadow: 0 0 22px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .aura-wrapper::before {
@@ -131,10 +131,12 @@ html, body {
   background: conic-gradient(
     from 0deg, 
     transparent 0%, 
-    transparent 25%, 
-    #dc2626 40%, 
-    #f97316 50%, 
-    #dc2626 60%, 
+    transparent 20%, 
+    #e5e7eb 32%,   /* Bright metallic silver shine */
+    #ffffff 38%,   /* Pure white specular highlight */
+    #dc2626 48%,   /* Vibrant Fire Red */
+    #f97316 55%,   /* Fiery Orange Accent */
+    #dc2626 62%,   /* Fire Red */
     transparent 75%, 
     transparent 100%
   );
@@ -156,215 +158,4 @@ html, body {
 @keyframes borderRotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Main Navigation Bar */
-.main-nav {
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 14.5px;
-  height: 80px;
-  padding: 0 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Inside Bar Sweeping Shimmer Effect */
-.main-nav::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    rgba(0, 0, 0, 0.02), 
-    rgba(255, 255, 255, 0.5), 
-    rgba(0, 0, 0, 0.02), 
-    transparent
-  );
-  transition: none;
-  z-index: 0;
-}
-
-.nav-aura-wrapper:hover .main-nav::after {
-  animation: insideBarSweep 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes insideBarSweep {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-.brand-logo, .nav-links, .nav-right {
-  position: relative;
-  z-index: 1;
-}
-
-/* Brand Logo & Company Name */
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.brand-logo img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.brand-title {
-  font-size: 25px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #111827 30%, #dc2626 70%, #f97316 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.4px;
-}
-
-/* Centered Nav Links */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  list-style: none;
-  margin: 0 auto;
-}
-
-.nav-links a {
-  position: relative;
-  text-decoration: none;
-  color: #4b5563;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background-color: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transform: none;
-}
-
-.nav-links a:hover {
-  color: #dc2626;
-  background-color: rgba(220, 38, 38, 0.06);
-  border-radius: 10px;
-  transform: translateY(-2px);
-}
-
-.nav-links a.active {
-  color: #4b5563;
-  font-weight: 500;
-  background-color: transparent;
-  border-radius: 8px;
-  text-shadow: none;
-  animation: none;
-  transform: none;
-}
-
-.nav-links a.active:hover {
-  color: #dc2626;
-  background-color: rgba(220, 38, 38, 0.06);
-  border-radius: 10px;
-  transform: translateY(-2px);
-}
-
-.nav-links a svg {
-  width: 15px;
-  height: 15px;
-  fill: currentColor;
-  transition: transform 0.3s ease;
-}
-
-.nav-links a:hover svg {
-  transform: translateY(2px) rotate(180deg);
-}
-
-/* Right Actions */
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.card.bg-base-100 {
-  background-color: #ffffff;
-  border-radius: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.card-body {
-  padding: 0;
-}
-
-.btn-get-started {
-  background-color: #161616;
-  color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  position: relative;
-  z-index: 2;
-}
-
-.btn-get-started:hover {
-  background-color: #333333;
-  transform: translateY(-1px);
-}
-
-/* ==========================================
-   Responsive Mobile Adjustments (< 992px)
-   ========================================== */
-@media (max-width: 992px) {
-  .top-bar {
-    height: auto;
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .top-bar-left, .top-bar-right {
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .nav-container {
-    padding: 10px 10px;
-  }
-
-  .main-nav {
-    height: auto;
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin: 0;
-  }
-
-  .brand-title {
-    font-size: 20px;
-  }
 }
