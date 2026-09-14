@@ -1,1 +1,58 @@
+/* Contact Us Flying Call Button */
+.btn-contact-fly {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
 
+.btn-contact-fly span.text-span {
+  display: block;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact-fly svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-contact-fly:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-contact-fly:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn-contact-fly:hover .text-span {
+  transform: translateX(4em);
+}
+
+.btn-contact-fly:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
