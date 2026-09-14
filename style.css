@@ -55,7 +55,37 @@ body {
   color: #dc2626;
 }
 
-/* Animated Contact Button */
+/* Bottom Utility Bar */
+.bottom-bar {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #333;
+}
+
+.bottom-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+}
+
+/* Animated Contact Button with Shiny Lining Glow */
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4), 0 0 5px rgba(255, 255, 255, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.7), 0 0 15px rgba(255, 100, 100, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4), 0 0 5px rgba(255, 255, 255, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
 .btn-contact-fly {
   font-family: inherit;
   font-size: 15px;
@@ -66,13 +96,13 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   overflow: hidden;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+  animation: border-glow 3s infinite ease-in-out;
 }
 
 .btn-contact-fly .svg-wrapper-1 {
@@ -108,6 +138,11 @@ body {
 
 .btn-contact-fly:active {
   transform: scale(0.95);
+}
+
+.btn-contact-fly:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 22px rgba(220, 38, 38, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes fly-1 {
