@@ -182,7 +182,6 @@ body {
 
 /* Universal Mobile & Fluid Responsiveness Fixes */
 @media (max-width: 768px) {
-  /* Prevent horizontal scrolling and layout breaking */
   body, html {
     overflow-x: hidden;
     width: 100%;
@@ -193,7 +192,6 @@ body {
     box-sizing: border-box;
   }
 
-  /* Utility Bars Layout */
   .top-bar {
     flex-direction: column !important;
     gap: 12px !important;
@@ -226,7 +224,6 @@ body {
     width: 100% !important;
   }
 
-  /* Hero & Content Sections */
   .hero-section {
     padding: 40px 15px !important;
   }
@@ -256,7 +253,6 @@ body {
     gap: 12px !important;
   }
 
-  /* Buttons Full-Width on Mobile */
   .btn-contact-fly, 
   .btn-secondary-outline {
     width: 100% !important;
@@ -264,7 +260,6 @@ body {
     text-align: center !important;
   }
 
-  /* Statistics Grid Single Column */
   .hero-stats-card {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
