@@ -99,7 +99,7 @@ body {
 }
 
 .btn-contact-fly:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: translateX(1.2em) rotate(0deg) scale(1.1);
 }
 
 .btn-contact-fly:hover span {
