@@ -96,13 +96,13 @@ body {
   display: flex;
   align-items: center;
   width: max-content;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  animation: border-glow 3s infinite ease-in-out;
+  animation: border-glow 2s infinite ease-in-out;
 }
 
 .btn-contact-fly .svg-wrapper-1 {
@@ -175,4 +175,19 @@ body {
   font-size: 16px;
   color: #666;
   margin-bottom: 24px;
+}
+/* Animated Contact Button with Bright Pulsing Glow */
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 1), 0 0 35px rgba(255, 255, 255, 0.9), inset 0 0 15px rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
 }
