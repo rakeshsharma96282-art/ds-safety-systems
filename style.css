@@ -110,14 +110,14 @@ html, body {
   background-color: #ffffff;
 }
 
-/* Shared Slow Circling Aura Effect (10s speed with red/orange gradient line) */
+/* Shared Slow Circling Aura Effect for Both Nav Bar and Get a Quote */
 .aura-wrapper {
   position: relative;
   display: inline-block;
-  padding: 2.5px;
-  border-radius: 16.5px;
+  padding: 3px;
+  border-radius: 17.5px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.25);
+  box-shadow: 0 0 22px rgba(220, 38, 38, 0.3);
 }
 
 .aura-wrapper::before {
@@ -138,12 +138,19 @@ html, body {
     transparent 75%, 
     transparent 100%
   );
-  animation: borderRotate 10s linear infinite;
+  animation: borderRotate 10s linear infinite; /* Slow, smooth circling speed */
 }
 
+/* Full Nav Bar Wrapper */
 .nav-aura-wrapper {
   width: 100%;
   max-width: 1420px;
+  border-radius: 17.5px;
+}
+
+/* Get a Quote Button Wrapper */
+.quote-aura-wrapper {
+  border-radius: 13.5px;
 }
 
 @keyframes borderRotate {
@@ -155,7 +162,7 @@ html, body {
 .main-nav {
   width: 100%;
   background-color: #ffffff;
-  border-radius: 14px;
+  border-radius: 14.5px;
   height: 80px;
   padding: 0 36px;
   display: flex;
@@ -291,10 +298,6 @@ html, body {
   align-items: center;
 }
 
-.quote-aura-wrapper {
-  border-radius: 12.5px;
-}
-
 .card.bg-base-100 {
   background-color: #ffffff;
   border-radius: 10px;
@@ -324,9 +327,11 @@ html, body {
   background-color: #333333;
   transform: translateY(-1px);
 }
-/* Responsive Styles for Mobile Phones */
+
+/* ==========================================
+   Responsive Mobile Adjustments (< 992px)
+   ========================================== */
 @media (max-width: 992px) {
-  /* Stack top utility bar items vertically if needed */
   .top-bar {
     height: auto;
     padding: 15px 20px;
@@ -341,7 +346,6 @@ html, body {
     justify-content: center;
   }
 
-  /* Make the main navigation stack or fit nicely on mobile */
   .nav-container {
     padding: 10px 10px;
   }
@@ -357,6 +361,7 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
+    margin: 0;
   }
 
   .brand-title {
