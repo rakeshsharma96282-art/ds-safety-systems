@@ -56,3 +56,21 @@
     transform: translateY(-0.1em);
   }
 }
+.btn-contact-fly svg {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px;
+  min-height: 18px;
+  fill: currentColor;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-contact-fly .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
