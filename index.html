@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DS Safety Systems | Advanced Fire Protection & Safety Solutions in New Delhi</title>
 
   <!-- SEO Meta Tags -->
@@ -132,7 +132,7 @@
       background-color: #ffffff;
     }
 
-    /* Shared Circling Aura Effect (Slow, hanging around speed at 10s with red/orange gradient line) */
+    /* Shared Circling Aura Effect */
     .aura-wrapper {
       position: relative;
       display: inline-block;
@@ -163,7 +163,6 @@
       animation: borderRotate 10s linear infinite;
     }
 
-    /* Specific wrapper width for the main nav bar */
     .nav-aura-wrapper {
       width: 100%;
       max-width: 1420px;
@@ -187,11 +186,9 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
-      
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Inside Bar Sweeping Shimmer Effect */
     .main-nav::after {
       content: '';
       position: absolute;
@@ -225,7 +222,6 @@
       z-index: 1;
     }
 
-    /* Brand Logo & Company Name */
     .brand-logo {
       display: flex;
       align-items: center;
@@ -249,7 +245,6 @@
       letter-spacing: -0.4px;
     }
 
-    /* Centered Nav Links */
     .nav-links {
       display: flex;
       align-items: center;
@@ -274,7 +269,6 @@
       transform: none;
     }
 
-    /* Uniform Hover State for All Links */
     .nav-links a:hover {
       color: #dc2626;
       background-color: rgba(220, 38, 38, 0.06);
@@ -282,7 +276,6 @@
       transform: translateY(-2px);
     }
 
-    /* Active State for Home */
     .nav-links a.active {
       color: #4b5563;
       font-weight: 500;
@@ -311,13 +304,11 @@
       transform: translateY(2px) rotate(180deg);
     }
 
-    /* Right Actions */
     .nav-right {
       display: flex;
       align-items: center;
     }
 
-    /* Get a quote button wrapper with the same slow circulating border */
     .quote-aura-wrapper {
       border-radius: 12.5px;
     }
@@ -351,11 +342,70 @@
       background-color: #333333;
       transform: translateY(-1px);
     }
+
+    /* Mobile Responsive Overrides */
+    @media (max-width: 768px) {
+      .top-bar {
+        height: auto !important;
+        padding: 12px 15px !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+      }
+
+      .top-bar-left {
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .top-bar-right {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .nav-container {
+        padding: 10px 10px !important;
+      }
+
+      .main-nav {
+        height: auto !important;
+        padding: 15px !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+      }
+
+      .nav-links {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 6px !important;
+        margin: 0 !important;
+      }
+
+      .nav-links a {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+
+      .nav-right {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      .quote-aura-wrapper, .btn-get-started {
+        width: 100% !important;
+        text-align: center !important;
+        display: block !important;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Top Utility Bar -->
+  <!-- Top Utility Bar -->
   <div class="top-bar">
     <div class="top-bar-left">
       <div class="info-item">
@@ -386,7 +436,7 @@
     </div>
   </div>
 
-  <!-- Main Navigation Menu wrapped with the full-bar slow circling effect -->
+  <!-- Main Navigation Menu -->
   <div class="nav-container">
     <div class="aura-wrapper nav-aura-wrapper">
       <nav class="main-nav">
@@ -412,7 +462,7 @@
           </li>
         </ul>
 
-        <!-- Right Actions with Get a quote button also having the slow circling line effect -->
+        <!-- Right Actions -->
         <div class="nav-right">
           <div class="aura-wrapper quote-aura-wrapper">
             <div class="card bg-base-100">
