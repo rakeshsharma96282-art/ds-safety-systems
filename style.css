@@ -267,7 +267,10 @@ body {
     width: 100% !important;
   }
 }
-
+/* Add this at the very top of your style.css */
+html {
+  scroll-behavior: smooth;
+}
 /* --- Services Section Styles --- */
 .services-section {
   padding: 80px 20px;
