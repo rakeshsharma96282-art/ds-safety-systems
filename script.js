@@ -95,3 +95,16 @@ function currentSlide(index) {
 }
 
 window.addEventListener('resize', updateSlider);
+
+function toggleProductDropdown(event) {
+  event.stopPropagation();
+  var menu = document.getElementById('productDropdownMenu');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+window.onclick = function(event) {
+  var menu = document.getElementById('productDropdownMenu');
+  if (menu && !event.target.closest('.dropdown-parent')) {
+    menu.style.display = 'none';
+  }
+};
