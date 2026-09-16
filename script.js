@@ -1,29 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Intersection Observer for Services Section Animation
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe Services Section
   const servicesSection = document.getElementById('services');
   if (servicesSection) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const header = document.getElementById('servicesHeader');
-          const container = document.getElementById('sliderContainer');
-          if (header) header.classList.add('is-visible');
-          if (container) container.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    observer.observe(servicesSection);
+    const header = document.getElementById('servicesHeader');
+    const container = document.getElementById('sliderContainer');
+    if (header) observer.observe(header);
+    if (container) observer.observe(container);
   }
 
-  // Card Click Animation & Navigation
+  // Observe Industries Section
+  const industriesSection = document.getElementById('industries');
+  if (industriesSection) {
+    const indHeader = document.getElementById('industriesHeader');
+    const indGrid = document.getElementById('industriesGrid');
+    if (indHeader) observer.observe(indHeader);
+    if (indGrid) observer.observe(indGrid);
+  }
+
+  // Card Click Animation & Navigation (Services)
   const cards = document.querySelectorAll('.service-card');
   cards.forEach(card => {
     card.addEventListener('click', function(e) {
