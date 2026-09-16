@@ -502,6 +502,102 @@ html {
   .services-title {
     font-size: 1.8rem;
   }
+}
+/* --- Industries We Serve Styles --- */
+.industries-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.industries-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+}
+
+.industries-title {
+  font-size: 2.3rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.industries-title span {
+  color: #dc2626;
+}
+
+.industries-desc {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.industries-grid-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.industry-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.1);
+  border-color: #dc2626;
+  background: #ffffff;
+}
+
+.industry-icon-box {
+  width: 56px;
+  height: 56px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.industry-card:hover .industry-icon-box {
+  background: #dc2626;
+}
+
+.industry-icon-box svg {
+  width: 26px;
+  height: 26px;
+  max-width: 100%;
+  max-height: 100%;
+  stroke: #ffffff;
+}
+
+.industry-name {
+  font-size: 1.2rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.industry-text {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
 /* --- Industries We Serve: Animations & Shadows --- */
 .industries-section {
   padding: 90px 20px;
