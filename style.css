@@ -738,18 +738,27 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Ensure header containers allow the dropdown to pop out */
-header, .header, .nav-container, .header-wrapper, .navbar, nav {
+
+/* Force the entire header navigation area to let the menu break out */
+header, .header, .nav-container, .header-wrapper, .navbar, nav, .nav-links, .dropdown-parent {
   overflow: visible !important;
 }
 
-/* Hide menu by default */
-.dropdown-menu {
-  display: none;
+/* Force the dropdown to position itself directly below the Products link */
+.dropdown-parent {
+  position: relative !important;
 }
 
-/* Show menu on hover */
+.dropdown-menu {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 5px !important;
+}
+
+/* Reveal on hover with maximum priority */
 .dropdown-parent:hover .dropdown-menu {
   display: block !important;
-  z-index: 99999 !important;
+  z-index: 2147483647 !important;
 }
