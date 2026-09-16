@@ -1126,6 +1126,7 @@
               <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
             </div>
           </a>
+
         </div>
       </div>
 
@@ -1146,11 +1147,104 @@
           </button>
         </div>
       </div>
+
     </div>
   </section>
   <!-- END: Services Section -->
 
-  
+  <!-- JavaScript for Slider & Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.getElementById('servicesHeader').classList.add('is-visible');
+            document.getElementById('sliderContainer').classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      observer.observe(document.getElementById('services'));
+
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetUrl = this.getAttribute('href');
+          this.classList.add('is-clicked');
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 250);
+        });
+      });
+    });
+
+    let currentIndex = 0;
+    const grid = document.getElementById('servicesGrid');
+    const dots = document.querySelectorAll('.dot');
+    const totalCards = 7;
+
+    function getCardsPerView() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 1200) return 2;
+      return 4; 
+    }
+
+    function updateSlider() {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = Math.max(0, totalCards - cardsPerView);
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+      const cardWidth = 295; 
+      const gap = 25; 
+      const offset = currentIndex * (cardWidth + gap);
+      grid.style.transform = `translateX(-${offset}px)`;
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function moveSlide(direction) {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = Math.max(0, totalCards - cardsPerView);
+
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = maxIndex; 
+      } else if (currentIndex > maxIndex) {
+        currentIndex = 0; 
+      }
+      updateSlider();
+    }
+
+    function currentSlide(index) {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = Math.max(0, totalCards - cardsPerView);
+      currentIndex = Math.min(index, maxIndex);
+      updateSlider();
+    }
+
+    window.addEventListener('resize', updateSlider);
+  </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve | DS Safety Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
   <!-- ==========================================
        INDUSTRIES WE SERVE SECTION
        ========================================== -->
@@ -1162,7 +1256,7 @@
 
     <div class="industries-grid-container">
       <div class="industries-grid">
-
+        
         <!-- 1. Commercial & Offices -->
         <div class="industry-card">
           <div class="industry-icon-box">
