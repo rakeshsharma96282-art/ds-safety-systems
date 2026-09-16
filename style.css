@@ -503,15 +503,14 @@ html {
     font-size: 1.8rem;
   }
 
-
 /* ==========================================
-   COMPACT INDUSTRIES SECTION CSS
+   INDUSTRIES SECTION WITH SCROLL ANIMATIONS
    ========================================== */
 
 .industries-section {
   display: block;
   width: 100%;
-  padding: 70px 20px;
+  padding: 90px 20px;
   background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
@@ -521,17 +520,17 @@ html {
 .industries-header {
   text-align: center;
   max-width: 750px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 50px auto;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease forwards;
 }
 
 .industries-title {
-  font-size: 2.1rem;
+  font-size: 2.3rem;
   color: #111827;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .industries-title span {
@@ -539,9 +538,9 @@ html {
 }
 
 .industries-desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #4b5563;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .industries-grid-container {
@@ -549,19 +548,18 @@ html {
   margin: 0 auto;
 }
 
-/* Decreased minmax to fit smaller, tighter cards */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
 }
 
-/* Compact Card Styling & Entrance Animation */
+/* Card Styling & Entrance Animation */
 .industry-card {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 20px 18px;
+  border-radius: 12px;
+  padding: 30px 24px;
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -587,22 +585,21 @@ html {
 
 /* Gorgeous Hover Glow & Lift Effect */
 .industry-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   background: #ffffff;
   border-color: #dc2626;
-  box-shadow: 0 14px 30px rgba(220, 38, 38, 0.1), 0 4px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 16px 35px rgba(220, 38, 38, 0.12), 0 6px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Smaller Icon Box */
 .industry-icon-box {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   background: #111827;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -611,33 +608,24 @@ html {
   transform: scale(1.05);
 }
 
-.industries-icon-box svg {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px !important;
-  max-height: 22px !important;
-  stroke: #ffffff !important;
-  fill: none !important;
-}
-  
 .industry-icon-box svg {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   stroke: #ffffff;
   fill: none;
 }
 
 .industry-name {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: #111827;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .industry-text {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: #6b7280;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* Keyframes for the Smooth Upward Fade Animation */
@@ -650,5 +638,4 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
-}
 }
