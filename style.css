@@ -739,32 +739,38 @@ html {
 }
 
 
-/* Parent Dropdown Container */
+/* Ensure your header and nav allow dropdowns to overflow and position correctly */
+header, .navbar, nav {
+  overflow: visible !important;
+  position: relative;
+  z-index: 100;
+}
+
 .dropdown-parent {
   position: relative;
 }
 
-/* Main Dropdown Box */
+/* The Dropdown Menu Box */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: #ffffff;
   min-width: 240px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   border: 1px solid #e5e7eb;
+  border-radius: 6px;
   list-style: none;
   padding: 8px 0;
   display: none; /* Hidden by default */
-  z-index: 999;
+  z-index: 1000;
 }
 
-/* Show main dropdown on hover */
+/* Show dropdown when hovering over Products */
 .dropdown-parent:hover .dropdown-menu {
   display: block;
 }
 
-/* Dropdown Links */
 .dropdown-menu li {
   position: relative;
 }
@@ -773,35 +779,17 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 10px 18px;
   color: #333333;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 400;
   background: #ffffff;
-  transition: background 0.2s ease, color 0.2s ease;
   border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
 }
 
-/* Remove bottom border on the last item */
-.dropdown-menu > li:last-child > a {
-  border-bottom: none;
-}
-
-/* Hover effect matching your reference image */
 .dropdown-menu a:hover {
   background-color: #f8f9fa;
-  color: #dc2626;
-}
-
-/* Submenu Arrow styling */
-.dropdown-menu .arrow {
-  font-size: 16px;
-  font-weight: bold;
-  color: #6b7280;
-}
-
-.dropdown-menu a:hover .arrow {
   color: #dc2626;
 }
 
@@ -812,57 +800,14 @@ html {
   left: 100%;
   background: #ffffff;
   min-width: 220px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   border: 1px solid #e5e7eb;
+  border-radius: 6px;
   list-style: none;
   padding: 8px 0;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* Show submenu on hovering the parent list item */
 .has-submenu:hover .submenu {
   display: block;
 }
-
-
-<li class="dropdown-parent">
-  <a href="#products">Products ▾</a>
-  <ul class="dropdown-menu">
-    <li class="has-submenu">
-      <a href="#products">Fire Alarms &rsaquo;</a>
-      <ul class="submenu">
-        <li><a href="#products">Alarm Control Panels</a></li>
-        <li><a href="#products">Optical Smoke Detectors</a></li>
-        <li><a href="#products">Manual Call Points</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#products">Fire Extinguishers &rsaquo;</a>
-      <ul class="submenu">
-        <li><a href="#products">ABC Powder Extinguisher</a></li>
-        <li><a href="#products">CO2 Fire Extinguisher</a></li>
-        <li><a href="#products">Clean Agent Extinguisher</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#products">Hydrants & Sprinklers &rsaquo;</a>
-      <ul class="submenu">
-        <li><a href="#products">Fire Hydrant Valves</a></li>
-        <li><a href="#products">Automatic Fire Sprinklers</a></li>
-        <li><a href="#products">Swing-Type Hose Reel Drum</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#products">Suppression & Safety &rsaquo;</a>
-      <ul class="submenu">
-        <li><a href="#products">Water Mist Suppression</a></li>
-        <li><a href="#products">Fiberglass Fire Blankets</a></li>
-        <li><a href="#products">Fireman Proximity Suit</a></li>
-        <li><a href="#products">Fireman Safety Axe</a></li>
-      </ul>
-    </li>
-    <li><a href="#products">Emergency Exit Signage</a></li>
-    <li><a href="#products">Photoluminescent Signs</a></li>
-    <li><a href="#products">Red Fire Bucket Stand</a></li>
-  </ul>
-</li>
