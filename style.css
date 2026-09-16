@@ -737,3 +737,89 @@ html {
   transform: translateY(0) !important;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+
+/* Parent Dropdown Container */
+.dropdown-parent {
+  position: relative;
+}
+
+/* Main Dropdown Box */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 240px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  list-style: none;
+  padding: 8px 0;
+  display: none; /* Hidden by default */
+  z-index: 999;
+}
+
+/* Show main dropdown on hover */
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Links */
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  background: #ffffff;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Remove bottom border on the last item */
+.dropdown-menu > li:last-child > a {
+  border-bottom: none;
+}
+
+/* Hover effect matching your reference image */
+.dropdown-menu a:hover {
+  background-color: #f8f9fa;
+  color: #dc2626;
+}
+
+/* Submenu Arrow styling */
+.dropdown-menu .arrow {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.dropdown-menu a:hover .arrow {
+  color: #dc2626;
+}
+
+/* Secondary Submenu (Pops out to the right) */
+.has-submenu .submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  list-style: none;
+  padding: 8px 0;
+  display: none; /* Hidden by default */
+}
+
+/* Show submenu on hovering the parent list item */
+.has-submenu:hover .submenu {
+  display: block;
+}
