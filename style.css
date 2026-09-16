@@ -823,3 +823,46 @@ html {
 .has-submenu:hover .submenu {
   display: block;
 }
+
+
+<li class="dropdown-parent">
+  <a href="#products">Products ▾</a>
+  <ul class="dropdown-menu">
+    <li class="has-submenu">
+      <a href="#products">Fire Alarms &rsaquo;</a>
+      <ul class="submenu">
+        <li><a href="#products">Alarm Control Panels</a></li>
+        <li><a href="#products">Optical Smoke Detectors</a></li>
+        <li><a href="#products">Manual Call Points</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <a href="#products">Fire Extinguishers &rsaquo;</a>
+      <ul class="submenu">
+        <li><a href="#products">ABC Powder Extinguisher</a></li>
+        <li><a href="#products">CO2 Fire Extinguisher</a></li>
+        <li><a href="#products">Clean Agent Extinguisher</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <a href="#products">Hydrants & Sprinklers &rsaquo;</a>
+      <ul class="submenu">
+        <li><a href="#products">Fire Hydrant Valves</a></li>
+        <li><a href="#products">Automatic Fire Sprinklers</a></li>
+        <li><a href="#products">Swing-Type Hose Reel Drum</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <a href="#products">Suppression & Safety &rsaquo;</a>
+      <ul class="submenu">
+        <li><a href="#products">Water Mist Suppression</a></li>
+        <li><a href="#products">Fiberglass Fire Blankets</a></li>
+        <li><a href="#products">Fireman Proximity Suit</a></li>
+        <li><a href="#products">Fireman Safety Axe</a></li>
+      </ul>
+    </li>
+    <li><a href="#products">Emergency Exit Signage</a></li>
+    <li><a href="#products">Photoluminescent Signs</a></li>
+    <li><a href="#products">Red Fire Bucket Stand</a></li>
+  </ul>
+</li>
