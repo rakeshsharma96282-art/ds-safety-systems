@@ -503,112 +503,106 @@ html {
     font-size: 1.8rem;
   }
 }
+
+
 /* ==========================================
-   FAIL-PROOF INDUSTRIES SECTION CSS
+   INDUSTRIES SECTION PROFESSIONAL STYLING
    ========================================== */
 
 .industries-section {
-  display: block !important;
-  width: 100% !important;
-  padding: 90px 20px !important;
-  background-color: #ffffff !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  box-sizing: border-box !important;
+  display: block;
+  width: 100%;
+  padding: 90px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .industries-header {
-  text-align: center !important;
-  max-width: 750px !important;
-  margin: 0 auto 50px auto !important;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
 }
 
 .industries-title {
-  font-size: 2.3rem !important;
-  color: #111827 !important;
-  font-weight: 700 !important;
-  margin-bottom: 15px !important;
+  font-size: 2.3rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .industries-title span {
-  color: #dc2626 !important;
+  color: #dc2626;
 }
 
 .industries-desc {
-  font-size: 1.05rem !important;
-  color: #4b5563 !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
 .industries-grid-container {
-  max-width: 1240px !important;
-  margin: 0 auto !important;
-  width: 100% !important;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .industries-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important;
-  gap: 25px !important;
-  width: 100% !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
 }
 
 .industry-card {
-  background: #f9fafb !important;
-  border: 1px solid #e5e7eb !important;
-  border-radius: 12px !important;
-  padding: 30px 24px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease !important;
-  box-sizing: border-box !important;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
 }
 
 .industry-card:hover {
-  transform: translateY(-8px) !important;
-  background: #ffffff !important;
-  border-color: #dc2626 !important;
-  box-shadow: 0 16px 35px rgba(220, 38, 38, 0.12), 0 6px 12px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: #dc2626;
+  box-shadow: 0 16px 35px rgba(220, 38, 38, 0.12), 0 6px 12px rgba(0, 0, 0, 0.04);
 }
 
 .industry-icon-box {
-  width: 56px !important;
-  height: 56px !important;
-  background: #111827 !important;
-  border-radius: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 20px !important;
-  transition: background-color 0.3s ease, transform 0.3s ease !important;
+  width: 56px;
+  height: 56px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .industry-card:hover .industry-icon-box {
-  background: #dc2626 !important;
-  transform: scale(1.05) !important;
+  background: #dc2626;
+  transform: scale(1.05);
 }
 
 .industry-icon-box svg {
-  width: 26px !important;
-  height: 26px !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  stroke: #ffffff !important;
-  fill: none !important;
+  width: 26px;
+  height: 26px;
+  stroke: #ffffff;
+  fill: none;
 }
 
 .industry-name {
-  font-size: 1.2rem !important;
-  color: #111827 !important;
-  font-weight: 600 !important;
-  margin-bottom: 10px !important;
-  margin-top: 0 !important;
+  font-size: 1.2rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .industry-text {
-  font-size: 0.92rem !important;
-  color: #6b7280 !important;
-  line-height: 1.5 !important;
-  margin: 0 !important;
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
 }
