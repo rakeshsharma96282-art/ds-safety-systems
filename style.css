@@ -738,12 +738,12 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.dropdown-parent:hover .dropdown-menu {
-  display: block !important;
+/* Fix header container clipping so the menu isn't hidden behind the hero */
+header, .nav-container, .header-wrapper, .navbar {
+  overflow: visible !important;
 }
-.dropdown-menu {
-  display: none;
-}
-.dropdown-parent:hover .dropdown-menu {
-  display: block;
+
+/* Ensure dropdown sits completely on top */
+#productDropdownMenu {
+  z-index: 99999 !important;
 }
