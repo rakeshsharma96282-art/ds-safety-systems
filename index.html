@@ -1337,22 +1337,21 @@
           <p class="industry-text">High-footfall evacuation planning, automated sprinkler protection, and fire safety systems.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
 
-</body>
-</html>
-<script>
-  function toggleProductDropdown(event) {
-    event.stopPropagation();
-    var menu = document.getElementById('productDropdownMenu');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+function toggleProductDropdown(event) {
+  event.stopPropagation();
+  const menu = document.getElementById('productDropdownMenu');
+  if (menu.style.display === 'none' || menu.style.display === '') {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
   }
-  window.onclick = function(event) {
-    var menu = document.getElementById('productDropdownMenu');
-    if (menu && !event.target.closest('.dropdown-parent')) {
-      menu.style.display = 'none';
-    }
-  };
-</script>
+}
+
+// Close the dropdown if the user clicks anywhere else on the page
+window.addEventListener('click', function() {
+  const menu = document.getElementById('productDropdownMenu');
+  if (menu) {
+    menu.style.display = 'none';
+  }
+});
