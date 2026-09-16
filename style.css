@@ -741,3 +741,9 @@ html {
 .dropdown-parent:hover .dropdown-menu {
   display: block !important;
 }
+.dropdown-menu {
+  display: none;
+}
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
+}
