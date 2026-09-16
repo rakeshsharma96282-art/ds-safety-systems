@@ -738,3 +738,6 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.dropdown-parent:hover .dropdown-menu {
+  display: block !important;
+}
