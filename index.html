@@ -472,13 +472,7 @@
     <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Red Fire Bucket Stand</a></li>
   </ul>
 </li>
-        <svg viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
-            </a>
-          </li>
-        </ul>
 
-
-  
         <!-- Right Actions -->
         <div class="nav-right">
           <div class="aura-wrapper quote-aura-wrapper">
@@ -1345,12 +1339,23 @@
           <h3 class="industry-name">Retail & Shopping Malls</h3>
           <p class="industry-text">High-footfall evacuation planning, automated sprinkler protection, and fire safety systems.</p>
         </div>
-
       </div>
     </div>
   </section>
 
+<script>
+    function toggleProductDropdown(event) {
+      event.stopPropagation();
+      var menu = document.getElementById('productDropdownMenu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
 
-<script src="script.js"></script>
+    window.onclick = function(event) {
+      var menu = document.getElementById('productDropdownMenu');
+      if (menu && !event.target.closest('.dropdown-parent')) {
+        menu.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>
