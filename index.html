@@ -456,7 +456,7 @@
             </a>
           </li>
           <li>
-           <a href="#products">Products</a>
+            <a href="#">Products 
               <svg viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
             </a>
           </li>
@@ -483,13 +483,13 @@
   <div class="hero-overlay"></div>
   <div class="hero-container">
     <div class="hero-content">
-      
+
       <!-- Main Headline with Brand Gradient, Subtle Outline, & White Glow -->
       <h1 class="brand-gradient-white-glow">Advanced Fire Protection & Safety Solutions</h1>
-      
+
       <!-- Clean Sartoshi Lead Line -->
       <p class="hero-lead">Safeguarding residential, commercial, and industrial properties with BIS-certified fire fighting equipment, precision installations, and dependable 24/7 AMC maintenance services in New Delhi.</p>
-      
+
       <!-- Action Button -->
       <div class="hero-actions">
         <a href="#products" class="custom-explore-btn">
@@ -599,11 +599,11 @@
     margin-bottom: 24px;
     letter-spacing: -0.5px;
     text-align: left;
-    
+
     background: linear-gradient(90deg, #ffffff 0%, #ff5c5c 40%, #f97316 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
     -webkit-text-stroke: 0.4px rgba(255, 255, 255, 0.45);
     filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35)) drop-shadow(0 3px 10px rgba(0, 0, 0, 0.9));
   }
@@ -822,7 +822,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | DS Safety Systems</title>
-  
+
   <!-- Import Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -969,11 +969,11 @@
   <!-- About Us Section -->
   <section class="about-section">
     <div class="about-container">
-      
+
       <div class="about-content-half">
         <span class="about-tag">About DS Safety Systems</span>
         <h2 class="about-title">Dedicated to Protecting Lives & Property in <span>New Delhi</span></h2>
-        
+
         <p class="about-desc">
           Based in Govind Puri, New Delhi, DS Safety Systems delivers industry-leading fire protection solutions backed by over <strong>15 years of professional experience</strong>. From supplying certified fire extinguishers and hydrant setups to managing comprehensive Annual Maintenance Contracts (AMC), our certified experts ensure your premises remain fully compliant and secure.
         </p>
@@ -1018,10 +1018,10 @@
 
     <!-- Slider Container -->
     <div class="slider-container" id="sliderContainer">
-      
+
       <div class="slider-viewport">
         <div class="services-grid" id="servicesGrid">
-          
+
           <!-- 1. Fire Extinguisher Services -->
           <a href="extinguishers.html" class="service-card">
             <div class="card-top">
@@ -1215,7 +1215,7 @@
     function moveSlide(direction) {
       const cardsPerView = getCardsPerView();
       const maxIndex = Math.max(0, totalCards - cardsPerView);
-      
+
       currentIndex += direction;
       if (currentIndex < 0) {
         currentIndex = maxIndex; 
@@ -1235,8 +1235,18 @@
     window.addEventListener('resize', updateSlider);
   </script>
 
-<!-- ==========================================
-       SECTION 2: INDUSTRIES WE SERVE SECTION
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve | DS Safety Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       INDUSTRIES WE SERVE SECTION
        ========================================== -->
   <section class="industries-section" id="industries">
     <div class="industries-header">
@@ -1322,89 +1332,6 @@
       </div>
     </div>
   </section>
-
-  <!-- JavaScript for Services Slider & Animations -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.getElementById('servicesHeader').classList.add('is-visible');
-            document.getElementById('sliderContainer').classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      observer.observe(document.getElementById('services'));
-
-      const cards = document.querySelectorAll('.service-card');
-      cards.forEach(card => {
-        card.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetUrl = this.getAttribute('href');
-          this.classList.add('is-clicked');
-          setTimeout(() => {
-            window.location.href = targetUrl;
-          }, 250);
-        });
-      });
-    });
-
-    let currentIndex = 0;
-    const grid = document.getElementById('servicesGrid');
-    const dots = document.querySelectorAll('.dot');
-    const totalCards = 7;
-
-    function getCardsPerView() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 1200) return 2;
-      return 4; 
-    }
-
-    function updateSlider() {
-      const cardsPerView = getCardsPerView();
-      const maxIndex = Math.max(0, totalCards - cardsPerView);
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-      const cardWidth = 295; 
-      const gap = 25; 
-      const offset = currentIndex * (cardWidth + gap);
-      grid.style.transform = `translateX(-${offset}px)`;
-
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-    }
-
-    function moveSlide(direction) {
-      const cardsPerView = getCardsPerView();
-      const maxIndex = Math.max(0, totalCards - cardsPerView);
-      
-      currentIndex += direction;
-      if (currentIndex < 0) {
-        currentIndex = maxIndex; 
-      } else if (currentIndex > maxIndex) {
-        currentIndex = 0; 
-      }
-      updateSlider();
-    }
-
-    function currentSlide(index) {
-      const cardsPerView = getCardsPerView();
-      const maxIndex = Math.max(0, totalCards - cardsPerView);
-      currentIndex = Math.min(index, maxIndex);
-      updateSlider();
-    }
-
-    window.addEventListener('resize', updateSlider);
-  </script>
 
 </body>
 </html>
