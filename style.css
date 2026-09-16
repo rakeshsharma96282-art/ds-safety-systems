@@ -729,7 +729,6 @@ html {
   }
 }
 
-/* Initial hidden state for animated elements */
 #servicesHeader, 
 #sliderContainer, 
 #industriesHeader, 
@@ -738,14 +737,3 @@ html {
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-/* Visible state triggered by JavaScript */
-#servicesHeader.is-visible, 
-#sliderContainer.is-visible, 
-#industriesHeader.is-visible, 
-#industriesGrid.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
