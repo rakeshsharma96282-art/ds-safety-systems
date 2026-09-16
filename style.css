@@ -738,12 +738,18 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Force header containers to show overflowing dropdown */
-header, .header, .nav-container, .header-wrapper, .navbar, nav, div:has(#productDropdownMenu) {
+/* Ensure header containers allow the dropdown to pop out */
+header, .header, .nav-container, .header-wrapper, .navbar, nav {
   overflow: visible !important;
 }
 
-/* Force the dropdown menu to display and stay on top when active */
-#productDropdownMenu {
-  z-index: 999999 !important;
+/* Hide menu by default */
+.dropdown-menu {
+  display: none;
+}
+
+/* Show menu on hover */
+.dropdown-parent:hover .dropdown-menu {
+  display: block !important;
+  z-index: 99999 !important;
 }
