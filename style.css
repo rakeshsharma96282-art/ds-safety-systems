@@ -738,20 +738,27 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-
-
-/* Force header containers to allow the dropdown menu to overflow */
-header, .header, .nav-container, .header-wrapper, .navbar, nav {
+/* Force the floating white header card and all internal wrappers to allow overflow */
+header, .header, .nav-container, .header-wrapper, .navbar, nav, .nav-links, div {
   overflow: visible !important;
 }
 
-/* Hide the dropdown by default */
-.dropdown-menu {
-  display: none !important;
+/* Ensure the dropdown parent stays relative */
+.dropdown-parent {
+  position: relative !important;
 }
 
-/* Show the dropdown cleanly when hovering over Products */
+/* Absolute positioning and maximum z-index for the dropdown */
+.dropdown-menu {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 8px !important;
+  z-index: 2147483647 !important;
+}
+
+/* Reveal the menu on hover */
 .dropdown-parent:hover .dropdown-menu {
   display: block !important;
-  z-index: 999999 !important;
 }
