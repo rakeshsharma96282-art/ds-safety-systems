@@ -738,52 +738,12 @@ html {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Force the floating white header card and all internal wrappers to allow overflow */
-header, .header, .nav-container, .header-wrapper, .navbar, nav, .nav-links, div {
-  overflow: visible !important;
-}
-
-/* Ensure the dropdown parent stays relative */
-.dropdown-parent {
-  position: relative !important;
-}
-
-/* Absolute positioning and maximum z-index for the dropdown */
-.dropdown-menu {
-  display: none !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  margin-top: 8px !important;
-  z-index: 2147483647 !important;
-}
-
-/* Reveal the menu on hover */
 .dropdown-parent:hover .dropdown-menu {
   display: block !important;
 }
-
-/* Force all cards, containers, and wrappers to disable clipping */
-.card, .navbar, header, .header, .nav-container, .header-wrapper, div {
-  overflow: visible !important;
-}
-
-/* Ensure the dropdown parent creates the positioning anchor */
-.dropdown-parent {
-  position: relative !important;
-}
-
-/* Force the dropdown menu to break out and stay on top */
 .dropdown-menu {
-  display: none !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  margin-top: 8px !important;
-  z-index: 2147483647 !important;
+  display: none;
 }
-
-/* Reveal the menu on hover */
 .dropdown-parent:hover .dropdown-menu {
-  display: block !important;
+  display: block;
 }
