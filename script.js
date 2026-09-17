@@ -44,6 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 250);
     });
   });
+
+  // --- FIX FOR PRODUCT CARD CLICKS (Prevents jumping to top & scrolls to details) ---
+  const productCards = document.querySelectorAll('.product-card'); // Update selector if your product cards have a different class name
+  productCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.preventDefault(); // Stops the page from jumping to the top
+
+      // Find your product details section/container element
+      const productDetails = document.getElementById('productDetailsSection'); // Change to your actual product details container ID
+
+      if (productDetails) {
+        // Smoothly scroll down to the product details section
+        productDetails.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
 });
 
 // Slider Logic
