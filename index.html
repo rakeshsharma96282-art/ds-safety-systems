@@ -873,10 +873,14 @@
     </div>
     <div class="top-bar-right">
       <a href="tel:9818701683" class="btn-contact-fly">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
-          <path fill="none" d="M0 0h24v24H0z"></path>
-          <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-        </svg>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+            </svg>
+          </div>
+        </div>
         <span>Contact Us</span>
       </a>
     </div>
@@ -900,13 +904,20 @@
           <li><a href="#products">Products</a></li>
         </ul>
 
-        <!-- Right Actions -->
+      <!-- Right Actions -->
         <div class="nav-right">
-          <a href="#" @click.prevent="openQuoteModal()" class="btn-get-started">Get a quote</a>
+          <div class="aura-wrapper quote-aura-wrapper">
+            <div class="card bg-base-100">
+              <div class="card-body">
+                <a href="#" class="btn-get-started">Get a quote</a>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
-  </div>
+  </div> 
+
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -917,12 +928,45 @@
         <p class="hero-lead">Safeguarding residential, commercial, and industrial properties with BIS-certified fire fighting equipment, precision installations, and dependable 24/7 AMC maintenance services in New Delhi.</p>
         <div class="hero-actions">
           <a href="#products" class="custom-explore-btn">
-            <button>Explore Products</button>
-          </a>
-        </div>
+           <button>
+            Explore Products
+            <div class="star-1">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+            <div class="star-2">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+            <div class="star-3">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+            <div class="star-4">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+            <div class="star-5">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+            <div class="star-6">
+              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+              </svg>
+            </div>
+          </button>
+        </a>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- About Us Section -->
   <section class="about-section" id="about">
@@ -958,47 +1002,149 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+ <!-- START: Services Section -->
   <section class="services-section" id="services">
-    <div class="services-header">
+    <div class="services-header" id="servicesHeader">
       <h2 class="services-title">Our Complete Range of <span>Safety Services</span></h2>
       <p class="services-desc">Professional installation, regular testing, compliance auditing, and round-the-clock protection solutions designed for complete peace of mind.</p>
     </div>
-    <div class="services-grid">
-      <a href="extinguishers.html" class="service-card">
-        <div>
-          <div class="service-icon"><img src="fire..png" alt="Extinguisher"></div>
-          <h3 class="service-name">Fire Extinguisher Services</h3>
-          <p class="service-text">Supply, annual maintenance, refilling, and hydro-testing of all portable units.</p>
+
+    <!-- Slider Container -->
+    <div class="slider-container" id="sliderContainer">
+
+      <div class="slider-viewport">
+        <div class="services-grid" id="servicesGrid">
+
+          <!-- 1. Fire Extinguisher Services -->
+          <a href="extinguishers.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon extinguisher-box black-box">
+                <img src="fire..png" alt="Fire Extinguisher Icon">
+              </div>
+              <h3 class="service-name">Fire Extinguisher Services</h3>
+              <p class="service-text">Supply, annual maintenance, refilling, and hydro-testing of all portable units.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 2. AMC & Maintenance Services -->
+          <a href="amc.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon amc-box black-box">
+                <img src="maintenance.png" alt="AMC & Maintenance Icon">
+              </div>
+              <h3 class="service-name">AMC & Maintenance Services</h3>
+              <p class="service-text">Comprehensive annual maintenance contracts ensuring complete compliance.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 3. Fire Hydrant Services -->
+          <a href="hydrant.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon hydrant-box black-box">
+                <img src="hydrant.png" alt="Fire Hydrant Icon">
+              </div>
+              <h3 class="service-name">Fire Hydrant Services</h3>
+              <p class="service-text">Complete installation and pressure pipeline setup for robust industrial networks.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 4. Fire Sprinkler Services -->
+          <a href="sprinklers.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon sprinkler-box black-box">
+                <img src="sprinkler.png.png" alt="Fire Sprinkler Icon">
+              </div>
+              <h3 class="service-name">Fire Sprinkler Services</h3>
+              <p class="service-text">Automated ceiling grid suppression systems designed for immediate response.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 5. Fire Alarm Services -->
+          <a href="alarms.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon smoke-box black-box">
+                <img src="smoke-detector.png" alt="Smoke Detector Icon">
+              </div>
+              <h3 class="service-name">Fire Alarm Services</h3>
+              <p class="service-text">Conventional and addressable smoke detectors and control monitoring panels.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 6. Fire Hose & Hose Reel Services -->
+          <a href="hose-reels.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon hose-box black-box">
+                <img src="water-hose.png" alt="Fire Hose Icon">
+              </div>
+              <h3 class="service-name">Fire Hose & Hose Reel Services</h3>
+              <p class="service-text">Wall-mounted swinging fire hose drums and reinforced rubber hosing.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
+          <!-- 7. Emergency Exit & Safety Signage -->
+          <a href="signs.html" class="service-card">
+            <div class="card-top">
+              <div class="service-icon exit-box black-box">
+                <img src="exit.png" alt="Emergency Exit Icon">
+              </div>
+              <h3 class="service-name">Emergency Exit & Safety Signage</h3>
+              <p class="service-text">Photoluminescent exit indicators, floor path markers, and safety notices.</p>
+            </div>
+            <div class="card-action">
+              <span>Explore Service</span>
+              <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg>
+            </div>
+          </a>
+
         </div>
-        <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg></div>
-      </a>
-      <a href="amc.html" class="service-card">
-        <div>
-          <div class="service-icon"><img src="maintenance.png" alt="AMC"></div>
-          <h3 class="service-name">AMC & Maintenance Services</h3>
-          <p class="service-text">Comprehensive annual maintenance contracts ensuring complete compliance.</p>
+      </div>
+
+      <!-- Navigation Bar Controls -->
+      <div class="slider-controls">
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-        <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg></div>
-      </a>
-      <a href="hydrant.html" class="service-card">
-        <div>
-          <div class="service-icon"><img src="hydrant.png" alt="Hydrant"></div>
-          <h3 class="service-name">Fire Hydrant Services</h3>
-          <p class="service-text">Complete installation and pressure pipeline setup for robust industrial networks.</p>
+        <div class="slider-arrows">
+          <button class="arrow-btn" onclick="moveSlide(-1)" aria-label="Previous Slide">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="arrow-btn" onclick="moveSlide(1)" aria-label="Next Slide">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
         </div>
-        <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg></div>
-      </a>
-      <a href="sprinklers.html" class="service-card">
-        <div>
-          <div class="service-icon"><img src="sprinkler.png.png" alt="Sprinkler"></div>
-          <h3 class="service-name">Fire Sprinkler Services</h3>
-          <p class="service-text">Automated ceiling grid suppression systems designed for immediate response.</p>
-        </div>
-        <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.71 12l-7.86-7.86-1.42 1.42L16.86 11H5v2z"/></svg></div>
-      </a>
+      </div>
+
     </div>
   </section>
+  <!-- END: Services Section -->
+
 
   <!-- 3D Cinematic Products Showcase Section (#products) -->
   <div id="products">
@@ -1208,35 +1354,97 @@
     </section>
   </div>
 
-  <!-- Industries We Serve Section -->
+  <!-- ==========================================
+       INDUSTRIES WE SERVE SECTION
+       ========================================== -->
   <section class="industries-section" id="industries">
     <div class="industries-header">
       <h2 class="industries-title">Industries <span>We Serve</span></h2>
       <p class="industries-desc">Providing certified fire safety equipment, installation, and maintenance tailored to the unique safety standards of every sector.</p>
     </div>
-    <div class="industries-grid">
-      <div class="industry-card">
-        <div class="industry-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="15" y2="6"></line></svg></div>
-        <h3 class="industry-name">Commercial & Offices</h3>
-        <p class="industry-text">Complete fire safety compliance, extinguishers, and smoke detection systems for corporate workspaces.</p>
-      </div>
-      <div class="industry-card">
-        <div class="industry-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div>
-        <h3 class="industry-name">Residential Societies</h3>
-        <p class="industry-text">High-rise building hydrant networks, hose reels, and regular maintenance for housing societies.</p>
-      </div>
-      <div class="industry-card">
-        <div class="industry-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8h5v12M14 20V4h5v16"/></svg></div>
-        <h3 class="industry-name">Industrial & Factories</h3>
-        <p class="industry-text">Heavy-duty suppression systems, foam extinguishers, and safety audits for manufacturing units.</p>
-      </div>
-      <div class="industry-card">
-        <div class="industry-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
-        <h3 class="industry-name">Hospitals & Healthcare</h3>
-        <p class="industry-text">Critical care unit safety protocols, alarm integration, and strict compliance maintenance.</p>
+
+    <div class="industries-grid-container">
+      <div class="industries-grid">
+        
+        <!-- 1. Commercial & Offices -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="15" y2="6"></line><line x1="9" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+          </div>
+          <h3 class="industry-name">Commercial & Offices</h3>
+          <p class="industry-text">Complete fire safety compliance, extinguishers, and smoke detection systems for corporate workspaces.</p>
+        </div>
+
+        <!-- 2. Residential Apartments -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="industry-name">Residential Societies</h3>
+          <p class="industry-text">High-rise building hydrant networks, hose reels, and regular maintenance for housing societies.</p>
+        </div>
+
+        <!-- 3. Industrial Plants -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8h5v12M14 20V4h5v16"/></svg>
+          </div>
+          <h3 class="industry-name">Industrial & Factories</h3>
+          <p class="industry-text">Heavy-duty suppression systems, foam extinguishers, and safety audits for manufacturing units.</p>
+        </div>
+
+        <!-- 4. Warehouses & Logistics -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <h3 class="industry-name">Warehouses & Storage</h3>
+          <p class="industry-text">Large-scale sprinkler installations and fire hazard management for logistics and storage hubs.</p>
+        </div>
+
+        <!-- 5. Educational Institutions -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <h3 class="industry-name">Schools & Colleges</h3>
+          <p class="industry-text">Student safety planning, accessible extinguisher placement, and regular mock drills guidance.</p>
+        </div>
+
+        <!-- 6. Hospitals & Healthcare -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <h3 class="industry-name">Hospitals & Healthcare</h3>
+          <p class="industry-text">Critical care unit safety protocols, alarm integration, and strict compliance maintenance.</p>
+        </div>
+
+        <!-- 7. Hotels & Hospitality -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"></path></svg>
+          </div>
+          <h3 class="industry-name">Hotels & Hospitality</h3>
+          <p class="industry-text">Emergency exit path lighting, guest room safety signage, and multi-zone alarm setups.</p>
+        </div>
+
+        <!-- 8. Retail & Malls -->
+        <div class="industry-card">
+          <div class="industry-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </div>
+          <h3 class="industry-name">Retail & Shopping Malls</h3>
+          <p class="industry-text">High-footfall evacuation planning, automated sprinkler protection, and fire safety systems.</p>
+        </div>
+
       </div>
     </div>
   </section>
+
+</body>
+</html>
+
 
   <!-- QUOTE INQUIRY MODAL -->
   <div x-show="showQuoteModal" 
