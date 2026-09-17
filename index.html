@@ -445,32 +445,30 @@
           <img src="DSF_logo_small.png" alt="DS Safety Systems Logo">
           <span class="brand-title">DS Safety Systems</span>
         </a>
-<!-- Centered Navigation Links -->
-<ul class="nav-links" style="display: flex; align-items: center; list-style: none; gap: 20px; margin: 0; padding: 0;">
+
+        <!-- Centered Navigation Links -->
+       <ul class="nav-links" style="display: flex; align-items: center; list-style: none; gap: 20px; margin: 0; padding: 0;">
   <li><a href="index.html">Home</a></li>
   <li><a href="index.html#about">About Us</a></li>
   <li><a href="#services">Services ▾</a></li>
- <li class="dropdown-parent" style="position: relative;">
-  <a href="javascript:void(0);" id="productBtn" onclick="toggleDropdown(event)" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit; padding: 10px 0;">
-    Products 
-    <svg viewBox="0 0 20 20" width="10" height="10"><path fill="currentColor" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
-  </a>
-</li>
-  <ul class="dropdown-menu" style="position: absolute; top: 100%; left: 0; background: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px rgba(0,0,0,0.1); list-style: none; padding: 8px 0; min-width: 240px; border-radius: 6px; margin: 0;">
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">ABC Powder Extinguisher</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">CO2 Fire Extinguisher</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Alarm Control Panels</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fire Hydrant Valves</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Automatic Fire Sprinklers</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Swing-Type Hose Reel Drum</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fiberglass Fire Blankets</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Emergency Exit Signage</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Red Fire Bucket Stand</a></li>
-  </ul>
-</li>
-  <li><a href="contact.html">Contact Us</a></li>
+  <li class="dropdown-parent" style="position: relative;">
+    <a href="javascript:void(0);" onclick="toggleProductDropdown(event)" style="cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+      Products 
+      <svg viewBox="0 0 20 20" width="10" height="10"><path fill="currentColor" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+    </a>
+    <ul id="productDropdownMenu" style="display: none; position: absolute; top: 100%; left: 0; background: #ffffff; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px rgba(0,0,0,0.1); list-style: none; padding: 8px 0; min-width: 240px; z-index: 1000; border-radius: 6px; margin-top: 5px;">
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">ABC Powder Extinguisher</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">CO2 Fire Extinguisher</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Alarm Control Panels</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fire Hydrant Valves</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Automatic Fire Sprinklers</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Swing-Type Hose Reel Drum</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fiberglass Fire Blankets</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Emergency Exit Signage</a></li>
+      <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Red Fire Bucket Stand</a></li>
+    </ul>
+  </li>
 </ul>
-      
         <!-- Right Actions -->
         <div class="nav-right">
           <div class="aura-wrapper quote-aura-wrapper">
@@ -1338,43 +1336,22 @@
           <p class="industry-text">High-footfall evacuation planning, automated sprinkler protection, and fire safety systems.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
 <script>
-// Create dropdown element and append directly to body on load
-const dropdownHTML = `
-  <ul id="globalDropdownMenu" style="display: none; position: fixed; background: #ffffff !important; background-color: #ffffff !important; border: 1px solid #d1d5db; box-shadow: 0 20px 40px rgba(0,0,0,0.3); list-style: none; padding: 10px 0; min-width: 250px; border-radius: 8px; margin: 0; z-index: 2147483647;">
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">ABC Powder Extinguisher</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">CO2 Fire Extinguisher</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Alarm Control Panels</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fire Hydrant Valves</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Automatic Fire Sprinklers</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Swing-Type Hose Reel Drum</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Fiberglass Fire Blankets</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Emergency Exit Signage</a></li>
-    <li><a href="#products" style="display: block; padding: 10px 20px; color: #333333; text-decoration: none; font-size: 14px;">Red Fire Bucket Stand</a></li>
-  </ul>
-`;
-
-// Append to body once the document loads
-document.body.insertAdjacentHTML('beforeend', dropdownHTML);
-
-function toggleDropdown(event) {
-  event.stopPropagation();
-  const btn = document.getElementById('productBtn');
-  const menu = document.getElementById('globalDropdownMenu');
-  const rect = btn.getBoundingClientRect();
-
-  if (menu.style.display === 'block') {
-    menu.style.display = 'none';
-  } else {
-    menu.style.top = (rect.bottom + 6) + 'px';
-    menu.style.left = rect.left + 'px';
-    menu.style.display = 'block';
+  function toggleProductDropdown(event) {
+    event.stopPropagation();
+    var menu = document.getElementById('productDropdownMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
   }
-}
-
-// Close when clicking anywhere else
-window.addEventListener('click', function() {
-  const menu = document.getElementById('globalDropdownMenu');
-  if (menu) menu.style.display = 'none';
-});
+  window.onclick = function(event) {
+    var menu = document.getElementById('productDropdownMenu');
+    if (menu && !event.target.closest('.dropdown-parent')) {
+      menu.style.display = 'none';
+    }
+  };
 </script>
