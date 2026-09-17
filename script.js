@@ -1,3 +1,32 @@
+function productService() {
+  return {
+    activeProduct: null,
+    currentSlide: 0,
+    selectedCategory: 'all',
+    
+    // PUT IT HERE inside your component methods:
+    openProduct(product, event) {
+      if (event) event.preventDefault(); // Stops the page from jumping
+      this.activeProduct = product;
+      this.currentSlide = 0;
+      
+      // Smoothly scroll to the products container
+      document.getElementById('products').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    },
+
+    closeProduct() {
+      this.activeProduct = null;
+    },
+
+    // ... your other functions ...
+  }
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
     root: null,
