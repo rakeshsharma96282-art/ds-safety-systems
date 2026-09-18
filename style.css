@@ -1,0 +1,749 @@
+/* General Reset & Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Top Utility Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.top-bar-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-item img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-bar-right a:not(.btn-contact-fly) {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.top-bar-right a:not(.btn-contact-fly):hover {
+  color: #dc2626;
+}
+
+/* Bottom Utility Bar */
+.bottom-bar {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #333;
+}
+
+.bottom-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 15px;
+}
+
+/* Animated Contact Button with Bright Pulsing Glow */
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 1), 0 0 35px rgba(255, 255, 255, 0.9), inset 0 0 15px rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(220, 38, 38, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.btn-contact-fly {
+  font-family: inherit;
+  font-size: 15px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  padding: 0.6em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  animation: border-glow 2s infinite ease-in-out;
+}
+
+.btn-contact-fly .svg-wrapper-1 {
+  display: flex;
+  align-items: center;
+}
+
+.btn-contact-fly span {
+  display: block;
+  margin-left: 0.3em;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact-fly svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-contact-fly:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-contact-fly:hover svg {
+  transform: translateX(1.2em) rotate(0deg) scale(1.1);
+}
+
+.btn-contact-fly:hover span {
+  transform: translateX(5em);
+}
+
+.btn-contact-fly:active {
+  transform: scale(0.95);
+}
+
+.btn-contact-fly:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 22px rgba(220, 38, 38, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* Contact Page Specific Layout */
+.contact-page-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-page-container h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.contact-page-container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Universal Mobile & Fluid Responsiveness Fixes */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .top-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 15px 10px !important;
+    text-align: center !important;
+  }
+
+  .top-bar-left {
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .top-bar-right {
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .bottom-bar {
+    padding: 15px 10px !important;
+  }
+
+  .bottom-bar-content {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .hero-section {
+    padding: 40px 15px !important;
+  }
+
+  .hero-container {
+    width: 100% !important;
+    gap: 30px !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .hero-content h1 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-content p {
+    font-size: 15px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .btn-contact-fly, 
+  .btn-secondary-outline {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-stats-card {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+}
+/* Add this at the very top of your style.css */
+html {
+  scroll-behavior: smooth;
+}
+/* --- Services Section Styles --- */
+.services-section {
+  padding: 80px 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-header.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-title {
+  font-size: 2.2rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.services-title span {
+  color: #dc2626; /* Accent red for safety emphasis */
+}
+
+.services-desc {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Slider Container */
+.slider-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.slider-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 5px 30px 5px;
+}
+
+.services-grid {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Service Card Design */
+.service-card {
+  flex: 0 0 295px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.12);
+  border-color: #dc2626;
+}
+
+.service-card.is-clicked {
+  transform: scale(0.97);
+}
+
+/* Card Elements */
+.black-box {
+  width: 60px;
+  height: 60px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.service-card:hover .black-box {
+  background: #dc2626;
+}
+
+.black-box img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes custom icons white */
+}
+
+.service-name {
+  font-size: 1.25rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.service-text {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #dc2626;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 16px;
+}
+
+.card-action svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .card-action svg {
+  transform: translateX(5px);
+}
+
+/* Slider Navigation Controls */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 0 10px;
+}
+
+.slider-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 5px;
+  background-color: #dc2626;
+}
+
+.slider-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+.arrow-btn:hover svg {
+  fill: #ffffff;
+}
+
+.arrow-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #374151;
+  transition: fill 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .slider-container {
+    max-width: 615px;
+  }
+}
+
+@media (max-width: 650px) {
+  .slider-container {
+    max-width: 295px;
+  }
+  .services-title {
+    font-size: 1.8rem;
+  }
+}
+/* --- Industries We Serve Styles --- */
+.industries-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.industries-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+}
+
+.industries-title {
+  font-size: 2.3rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.industries-title span {
+  color: #dc2626;
+}
+
+.industries-desc {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.industries-grid-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.industry-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.1);
+  border-color: #dc2626;
+  background: #ffffff;
+}
+
+.industry-icon-box {
+  width: 56px;
+  height: 56px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.industry-card:hover .industry-icon-box {
+  background: #dc2626;
+}
+
+.industry-icon-box svg {
+  width: 26px;
+  height: 26px;
+  max-width: 100%;
+  max-height: 100%;
+  stroke: #ffffff;
+}
+
+.industry-name {
+  font-size: 1.2rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.industry-text {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* --- Industries We Serve: Animations & Shadows --- */
+.industries-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.industries-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.industries-title {
+  font-size: 2.3rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.industries-title span {
+  color: #dc2626;
+}
+
+.industries-desc {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.industries-grid-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+/* Base Card with Smooth Soft Shadow */
+.industry-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease forwards;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.35s ease, 
+              background-color 0.35s ease;
+}
+
+/* Stagger the card fade-in animations so they cascade nicely */
+.industry-card:nth-child(1) { animation-delay: 0.3s; }
+.industry-card:nth-child(2) { animation-delay: 0.4s; }
+.industry-card:nth-child(3) { animation-delay: 0.5s; }
+.industry-card:nth-child(4) { animation-delay: 0.6s; }
+.industry-card:nth-child(5) { animation-delay: 0.7s; }
+.industry-card:nth-child(6) { animation-delay: 0.8s; }
+.industry-card:nth-child(7) { animation-delay: 0.9s; }
+.industry-card:nth-child(8) { animation-delay: 0.9s; }
+
+/* Hover Effect with Glowing Red-Tinted Shadow and Elevation */
+.industry-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: #dc2626;
+  box-shadow: 0 16px 35px rgba(220, 38, 38, 0.12), 0 6px 12px rgba(0, 0, 0, 0.04);
+}
+
+.industry-icon-box {
+  width: 56px;
+  height: 56px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.industry-card:hover .industry-icon-box {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.industry-icon-box svg {
+  width: 26px;
+  height: 26px;
+  max-width: 100%;
+  max-height: 100%;
+  stroke: #ffffff;
+}
+
+.industry-name {
+  font-size: 1.2rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.industry-text {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Keyframes for Smooth Fade-In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Force elements visible immediately without waiting for JS observer */
+#servicesHeader, 
+#sliderContainer, 
+#industriesHeader, 
+#industriesGrid {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.dropdown-parent:hover .dropdown-menu {
+  display: block !important;
+}
+.dropdown-menu {
+  display: none;
+}
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
+}
