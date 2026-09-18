@@ -274,366 +274,238 @@ html {
 
 <!-- SERVICES SECTION -->
 
-<section class="services-section" x-data="servicesCarousel()" @scroll.window="handleScroll">
-  
-  <!-- === CINEMATIC INDUSTRIAL BACKGROUND LAYERS === -->
-  <div class="eng-grid-bg" :style="`transform: translateY(${scrollY * 0.05}px)`"></div>
-  <div class="eng-schematic-circle-solid" style="width: 650px; height: 650px; top: -180px; left: -120px;"></div>
-  <div class="eng-schematic-circle" style="width: 850px; height: 850px; bottom: -250px; right: -200px;"></div>
-  <div class="active-card-glow" :style="activeGlowStyle"></div>
-  
-  <svg class="tech-connection-svg" xmlns="http://www.w3.org/2000/svg">
-    <line x1="5%" y1="40%" x2="95%" y2="40%" class="tech-line" />
-    <line x1="20%" y1="20%" x2="80%" y2="80%" class="tech-line tech-line-red" />
-  </svg>
-
-  <div class="tech-particle" style="width: 4px; height: 4px; top: 20%; left: 15%; animation-delay: 0s;"></div>
-  <div class="tech-particle tech-particle-red" style="width: 5px; height: 5px; top: 30%; left: 80%; animation-delay: 2s;"></div>
-  <div class="tech-particle" style="width: 3px; height: 3px; top: 65%; left: 30%; animation-delay: 1s;"></div>
-  <div class="cinematic-light-sweep"></div>
-  <!-- ============================================== -->
-
-  <!-- FOREGROUND CONTENT LAYER -->
-  <div class="services-content-layer">
-    
-    <!-- Header -->
-    <div class="services-header" :class="{'is-visible': sectionVisible}">
-      <h2 class="services-title">Our Complete Range of <span>Safety Services</span></h2>
-      <p class="services-desc">
-        Professional installation, regular testing, compliance auditing, and round-the-clock protection solutions designed for complete peace of mind.
-      </p>
-    </div>
-
-    <!-- Slider Container -->
-    <div class="slider-container" :class="{'is-visible': sectionVisible}">
-      <div class="slider-viewport">
-        <div class="services-grid" :style="`transform: translateX(-${currentIndex * 320}px)`">
-          
-          <!-- Card 1: Fire Sprinkler Services -->
-          <div class="service-card" @click="openServiceModal('sprinkler')">
-            <div>
-              <div class="black-box"><img src="sprinkler.png" alt="Fire Sprinkler Services"></div>
-              <h3 class="service-name">Fire Sprinkler Services</h3>
-              <p class="service-text">Automated ceiling grid suppression systems designed for immediate response.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 2: Fire Alarm Services -->
-          <div class="service-card" @click="openServiceModal('alarm')">
-            <div>
-              <div class="black-box"><img src="fire.png" alt="Fire Alarm Services"></div>
-              <h3 class="service-name">Fire Alarm Services</h3>
-              <p class="service-text">Conventional and addressable smoke detectors and control monitoring panels.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 3: Fire Hose & Hose Reel Services -->
-          <div class="service-card" @click="openServiceModal('hose')">
-            <div>
-              <div class="black-box"><img src="hydrant.png" alt="Fire Hose Services"></div>
-              <h3 class="service-name">Fire Hose &amp; Hose Reel Services</h3>
-              <p class="service-text">Wall-mounted swinging fire hose drums and reinforced rubber hosing.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 4: Emergency Exit & Safety Signage -->
-          <div class="service-card" @click="openServiceModal('signage')">
-            <div>
-              <div class="black-box"><img src="exit.png" alt="Emergency Exit Signage"></div>
-              <h3 class="service-name">Emergency Exit &amp; Safety Signage</h3>
-              <p class="service-text">Photoluminescent exit indicators, floor path markers, and safety notices.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 5: Fire Extinguisher Maintenance -->
-          <div class="service-card" @click="openServiceModal('extinguisher')">
-            <div>
-              <div class="black-box"><img src="maintenance.png" alt="Extinguisher Maintenance"></div>
-              <h3 class="service-name">Fire Extinguisher Maintenance</h3>
-              <p class="service-text">Periodic inspection, pressure testing, refilling, and certification services.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 6: Smoke Detector Installation -->
-          <div class="service-card" @click="openServiceModal('detector')">
-            <div>
-              <div class="black-box"><img src="smoke-detector.png" alt="Smoke Detector"></div>
-              <h3 class="service-name">Smoke Detector Installation</h3>
-              <p class="service-text">Advanced optical and thermal sensors for early fire detection and warning.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-          <!-- Card 7: Safety Audit & Compliance -->
-          <div class="service-card" @click="openServiceModal('audit')">
-            <div>
-              <div class="black-box"><img src="pin.png" alt="Safety Audit"></div>
-              <h3 class="service-name">Safety Audit &amp; Compliance</h3>
-              <p class="service-text">Comprehensive facility risk assessments and regulatory compliance reports.</p>
-            </div>
-            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Controls -->
-      <div class="slider-controls">
-        <div class="slider-dots">
-          <template x-for="(dot, index) in totalSlides" :key="index">
-            <span class="dot" :class="{'active': currentIndex === index}" @click="currentIndex = index"></span>
-          </template>
-        </div>
-        <div class="slider-arrows">
-          <button class="arrow-btn" @click="prevSlide()">
-            <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-          </button>
-          <button class="arrow-btn" @click="nextSlide()">
-            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-@keyframes light-sweep-anim {
-  0% { left: -140px; opacity: 0; }
-  20% { opacity: 0.5; }
-  50% { left: 105%; opacity: 0.5; }
-  100% { left: 105%; opacity: 0; }
-}
-
-
-/* --- FOREGROUND CONTENT & HEADER STYLES --- */
-
-.services-content-layer {
-  position: relative;
-  z-index: 3;
+/* --- Services Section Styles --- */
+.services-section {
+  padding: 80px 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 .services-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .services-header.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .services-title {
-  font-size: 2.2rem;
-  color: #111827;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .services-title span {
-  color: #dc2626; /* Accent red for safety emphasis */
+  color: #dc2626; /* Accent red for safety emphasis */
 }
 
 .services-desc {
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
-
-/* --- SLIDER & CONTAINER STYLES --- */
-
+/* Slider Container */
 .slider-container {
-  max-width: 1240px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+  max-width: 1240px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
 .slider-container.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slider-viewport {
-  overflow: hidden;
-  width: 100%;
-  padding: 10px 5px 30px 5px;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 5px 30px 5px;
 }
 
 .services-grid {
-  display: flex;
-  gap: 25px;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform;
+  display: flex;
+  gap: 25px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
-
-/* --- SERVICE CARD DESIGN --- */
-
+/* Service Card Design */
 .service-card {
-  flex: 0 0 295px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 30px 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
-  border: 1px solid #e5e7eb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  flex: 0 0 295px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.12);
-  border-color: #dc2626;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.12);
+  border-color: #dc2626;
 }
 
 .service-card.is-clicked {
-  transform: scale(0.97);
+  transform: scale(0.97);
 }
 
-
-/* --- CARD ELEMENTS --- */
-
+/* Card Elements */
 .black-box {
-  width: 60px;
-  height: 60px;
-  background: #111827;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
+  width: 60px;
+  height: 60px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .service-card:hover .black-box {
-  background: #dc2626;
+  background: #dc2626;
 }
 
 .black-box img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* Makes custom icons white */
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes custom icons white */
 }
 
 .service-name {
-  font-size: 1.25rem;
-  color: #111827;
-  font-weight: 600;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  font-size: 1.25rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .service-text {
-  font-size: 0.92rem;
-  color: #6b7280;
-  line-height: 1.5;
-  margin-bottom: 24px;
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .card-action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #dc2626;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #dc2626;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 16px;
 }
 
 .card-action svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  transition: transform 0.3s ease;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover .card-action svg {
-  transform: translateX(5px);
+  transform: translateX(5px);
 }
 
-
-/* --- SLIDER NAVIGATION CONTROLS --- */
-
+/* Slider Navigation Controls */
 .slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 25px;
-  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 0 10px;
 }
 
 .slider-dots {
-  display: flex;
-  gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #d1d5db;
-  cursor: pointer;
-  transition: background-color 0.3s ease, width 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
 }
 
 .dot.active {
-  width: 24px;
-  border-radius: 5px;
-  background-color: #dc2626;
+  width: 24px;
+  border-radius: 5px;
+  background-color: #dc2626;
 }
 
 .slider-arrows {
-  display: flex;
-  gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .arrow-btn {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
 .arrow-btn:hover {
-  background: #dc2626;
-  border-color: #dc2626;
-  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
 }
 
 .arrow-btn:hover svg {
-  fill: #ffffff;
+  fill: #ffffff;
 }
 
 .arrow-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: #374151;
-  transition: fill 0.3s ease;
+  width: 20px;
+  height: 20px;
+  fill: #374151;
+  transition: fill 0.3s ease;
 }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .slider-container {
+    max-width: 615px;
+  }
+}
+
+@media (max-width: 650px) {
+  .slider-container {
+    max-width: 295px;
+  }
+  .services-title {
+    font-size: 1.8rem;
+  }
+} 
 
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
