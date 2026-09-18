@@ -272,133 +272,135 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ==========================================================================
-   DS SAFETY SYSTEMS - SERVICES SECTION & CINEMATIC ATMOSPHERE STYLES
-   ========================================================================== */
+<!-- SERVICES SECTION -->
+<section class="services-section" x-data="servicesCarousel()" @scroll.window="handleScroll">
+  
+  <!-- === CINEMATIC INDUSTRIAL BACKGROUND LAYERS === -->
+  <div class="eng-grid-bg" :style="`transform: translateY(${scrollY * 0.05}px)`"></div>
+  <div class="eng-schematic-circle-solid" style="width: 650px; height: 650px; top: -180px; left: -120px;"></div>
+  <div class="eng-schematic-circle" style="width: 850px; height: 850px; bottom: -250px; right: -200px;"></div>
+  <div class="active-card-glow" :style="activeGlowStyle"></div>
+  
+  <svg class="tech-connection-svg" xmlns="http://www.w3.org/2000/svg">
+    <line x1="5%" y1="40%" x2="95%" y2="40%" class="tech-line" />
+    <line x1="20%" y1="20%" x2="80%" y2="80%" class="tech-line tech-line-red" />
+  </svg>
 
-.services-section {
-  position: relative;
-  padding: 80px 20px;
-  background-color: #ffffff; /* Strictly pure white background */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
-}
+  <div class="tech-particle" style="width: 4px; height: 4px; top: 20%; left: 15%; animation-delay: 0s;"></div>
+  <div class="tech-particle tech-particle-red" style="width: 5px; height: 5px; top: 30%; left: 80%; animation-delay: 2s;"></div>
+  <div class="tech-particle" style="width: 3px; height: 3px; top: 65%; left: 30%; animation-delay: 1s;"></div>
+  <div class="cinematic-light-sweep"></div>
+  <!-- ============================================== -->
 
-/* --- CINEMATIC WHITE INDUSTRIAL BACKGROUND LAYERS --- */
+  <!-- FOREGROUND CONTENT LAYER -->
+  <div class="services-content-layer">
+    
+    <!-- Header -->
+    <div class="services-header" :class="{'is-visible': sectionVisible}">
+      <h2 class="services-title">Our Complete Range of <span>Safety Services</span></h2>
+      <p class="services-desc">
+        Professional installation, regular testing, compliance auditing, and round-the-clock protection solutions designed for complete peace of mind.
+      </p>
+    </div>
 
-/* Layer 1: Faint Engineering Grid */
-.eng-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.022) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.022) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 1;
-}
+    <!-- Slider Container -->
+    <div class="slider-container" :class="{'is-visible': sectionVisible}">
+      <div class="slider-viewport">
+        <div class="services-grid" :style="`transform: translateX(-${currentIndex * 320}px)`">
+          
+          <!-- Card 1: Fire Sprinkler Services -->
+          <div class="service-card" @click="openServiceModal('sprinkler')">
+            <div>
+              <div class="black-box"><img src="sprinkler.png" alt="Fire Sprinkler Services"></div>
+              <h3 class="service-name">Fire Sprinkler Services</h3>
+              <p class="service-text">Automated ceiling grid suppression systems designed for immediate response.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-/* Layer 2: Rotating Technical Engineering Schematics */
-.eng-schematic-circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(220, 38, 38, 0.07);
-  pointer-events: none;
-  z-index: 1;
-  animation: slow-rotate 120s linear infinite;
-}
+          <!-- Card 2: Fire Alarm Services -->
+          <div class="service-card" @click="openServiceModal('alarm')">
+            <div>
+              <div class="black-box"><img src="fire.png" alt="Fire Alarm Services"></div>
+              <h3 class="service-name">Fire Alarm Services</h3>
+              <p class="service-text">Conventional and addressable smoke detectors and control monitoring panels.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-.eng-schematic-circle-solid {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.025);
-  pointer-events: none;
-  z-index: 1;
-  animation: slow-rotate-reverse 150s linear infinite;
-}
+          <!-- Card 3: Fire Hose & Hose Reel Services -->
+          <div class="service-card" @click="openServiceModal('hose')">
+            <div>
+              <div class="black-box"><img src="hydrant.png" alt="Fire Hose Services"></div>
+              <h3 class="service-name">Fire Hose &amp; Hose Reel Services</h3>
+              <p class="service-text">Wall-mounted swinging fire hose drums and reinforced rubber hosing.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-@keyframes slow-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+          <!-- Card 4: Emergency Exit & Safety Signage -->
+          <div class="service-card" @click="openServiceModal('signage')">
+            <div>
+              <div class="black-box"><img src="exit.png" alt="Emergency Exit Signage"></div>
+              <h3 class="service-name">Emergency Exit &amp; Safety Signage</h3>
+              <p class="service-text">Photoluminescent exit indicators, floor path markers, and safety notices.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-@keyframes slow-rotate-reverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-}
+          <!-- Card 5: Fire Extinguisher Maintenance -->
+          <div class="service-card" @click="openServiceModal('extinguisher')">
+            <div>
+              <div class="black-box"><img src="maintenance.png" alt="Extinguisher Maintenance"></div>
+              <h3 class="service-name">Fire Extinguisher Maintenance</h3>
+              <p class="service-text">Periodic inspection, pressure testing, refilling, and certification services.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-/* Layer 3: Soft Atmospheric Red Glow Tracking Active Card */
-.active-card-glow {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(239, 68, 68, 0.06) 0%, rgba(239, 68, 68, 0.01) 50%, transparent 75%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: blur(35px);
-}
+          <!-- Card 6: Smoke Detector Installation -->
+          <div class="service-card" @click="openServiceModal('detector')">
+            <div>
+              <div class="black-box"><img src="smoke-detector.png" alt="Smoke Detector"></div>
+              <h3 class="service-name">Smoke Detector Installation</h3>
+              <p class="service-text">Advanced optical and thermal sensors for early fire detection and warning.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-/* Layer 4: Technical Connection Lines & Nodes */
-.tech-connection-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.5;
-}
+          <!-- Card 7: Safety Audit & Compliance -->
+          <div class="service-card" @click="openServiceModal('audit')">
+            <div>
+              <div class="black-box"><img src="pin.png" alt="Safety Audit"></div>
+              <h3 class="service-name">Safety Audit &amp; Compliance</h3>
+              <p class="service-text">Comprehensive facility risk assessments and regulatory compliance reports.</p>
+            </div>
+            <div class="card-action"><span>Explore Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          </div>
 
-.tech-line {
-  stroke: rgba(0, 0, 0, 0.04);
-  stroke-width: 1;
-  stroke-dasharray: 4 8;
-  animation: dash-move 30s linear infinite;
-}
+        </div>
+      </div>
 
-.tech-line-red {
-  stroke: rgba(239, 68, 68, 0.2);
-  stroke-width: 1.5;
-}
+      <!-- Controls -->
+      <div class="slider-controls">
+        <div class="slider-dots">
+          <template x-for="(dot, index) in totalSlides" :key="index">
+            <span class="dot" :class="{'active': currentIndex === index}" @click="currentIndex = index"></span>
+          </template>
+        </div>
+        <div class="slider-arrows">
+          <button class="arrow-btn" @click="prevSlide()">
+            <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="arrow-btn" @click="nextSlide()">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
-@keyframes dash-move {
-  to { stroke-dashoffset: -200; }
-}
-
-/* Layer 5: Floating Industrial Dust Particles */
-.tech-particle {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.06);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  animation: float-particle 18s ease-in-out infinite;
-}
-
-.tech-particle-red {
-  background-color: rgba(239, 68, 68, 0.18);
-  animation-duration: 22s;
-}
-
-@keyframes float-particle {
-  0%, 100% { transform: translateY(0px) translateX(0px); }
-  50% { transform: translateY(-30px) translateX(15px); }
-}
-
-/* Layer 6: Soft Cinematic Light Sweep */
-.cinematic-light-sweep {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 140px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), rgba(239, 68, 68, 0.025), transparent);
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0;
-  animation: light-sweep-anim 8s ease-in-out infinite;
-}
+  </div>
+</section>
 
 @keyframes light-sweep-anim {
   0% { left: -140px; opacity: 0; }
