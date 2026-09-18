@@ -274,7 +274,6 @@ html {
 
 <!-- SERVICES SECTION -->
 
-
 <section class="services-section" x-data="servicesCarousel()" @scroll.window="handleScroll">
   
   <!-- === CINEMATIC INDUSTRIAL BACKGROUND LAYERS === -->
