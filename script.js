@@ -157,24 +157,3 @@ window.onclick = function(event) {
   }
 };
 
-document.addEventListener('alpine:init', () => {
-  Alpine.data('servicesCarousel', () => ({
-    currentIndex: 0,
-    totalSlides: 7, // Set to match your 7 service cards
-    sectionVisible: true,
-    scrollY: 0,
-    activeGlowStyle: 'top: 50%; left: 50%; transform: translate(-50%, -50%);',
-
-    handleScroll() {
-      this.scrollY = window.scrollY;
-    },
-
-    nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-    },
-
-    prevSlide() {
-      this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-    }
-  }));
-});
