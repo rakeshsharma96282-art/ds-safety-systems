@@ -9,22 +9,927 @@
   <meta name="description" content="DS Safety Systems provides certified fire protection equipment, installation, and Annual Maintenance Contracts (AMC) in New Delhi. Expert safety solutions for commercial and residential properties.">
   <meta name="keywords" content="Fire Safety Systems, Fire Extinguishers, Fire Alarms, Hydrant Systems, AMC Fire Maintenance, DS Safety Systems Delhi">
 
-  <!-- Open Graph / Social Sharing Meta Tags -->
-  <meta property="og:title" content="DS Safety Systems | Fire Protection Experts">
-  <meta property="og:description" content="Professional fire safety equipment, installation, and AMC services in New Delhi.">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==========================================================================
+       1. GLOBAL RESET & BASE STYLES
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #ffffff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+
+    /* Safe constraints for all media */
+    img, svg {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       2. TOP UTILITY BAR
+       ========================================================================== */
+    .top-bar {
+      width: 100%;
+      background-color: #161616;
+      color: #fff;
+      height: 70px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .info-item:hover {
+      color: #dc2626;
+    }
+
+    .info-item img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Contact Button Animation */
+    .btn-contact-fly {
+      font-size: 14px;
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: white;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .btn-contact-fly:hover {
+      box-shadow: 0 0 20px rgba(220, 38, 38, 0.85);
+      transform: translateY(-2px);
+    }
+
+    .btn-contact-fly svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-contact-fly:hover svg {
+      transform: translateX(3px) rotate(-10deg);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR WITH ROTATING AURA
+       ========================================================================== */
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 14px 20px;
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container.scrolled {
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .aura-wrapper {
+      position: relative;
+      display: inline-block;
+      padding: 2.5px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+    }
+
+    .aura-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      transform: translate(-50%, -50%);
+      background: conic-gradient(
+        from 0deg, 
+        transparent 0%, 
+        transparent 25%, 
+        #dc2626 40%, 
+        #f97316 50%, 
+        #dc2626 60%, 
+        transparent 75%, 
+        transparent 100%
+      );
+      animation: borderRotate 8s linear infinite;
+    }
+
+    @keyframes borderRotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .nav-aura-wrapper {
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .main-nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 14px;
+      height: 74px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Fixed logo size constraint */
+    .brand-logo img {
+      width: 46px !important;
+      height: 46px !important;
+      max-width: 46px !important;
+      max-height: 46px !important;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #111827 30%, #dc2626 70%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      margin: 0 auto;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #dc2626;
+      background-color: rgba(220, 38, 38, 0.06);
+      transform: translateY(-2px);
+    }
+
+    /* Products Dropdown */
+    .dropdown-parent {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 8px 0;
+      min-width: 240px;
+      z-index: 1000;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 20px;
+      color: #333333;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #fef2f2;
+      color: #dc2626;
+    }
+
+    .dropdown-parent:hover .dropdown-menu {
+      display: block;
+    }
+
+    .btn-get-started {
+      background-color: #161616;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-get-started:hover {
+      background-color: #333333;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      min-height: 80vh;
+      background-color: #0b0f19;
+      background-image: url('ChatGPT Image Sep 14, 2026, 04_35_51 PM.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 80px 40px;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg, 
+        rgba(8, 8, 8, 0.98) 0%, 
+        rgba(12, 12, 12, 0.88) 55%, 
+        rgba(20, 20, 20, 0.3) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 880px;
+      text-align: left;
+    }
+
+    .brand-gradient-white-glow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #ffffff 0%, #ff5c5c 40%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 16px rgba(220, 38, 38, 0.4));
+    }
+
+    .hero-lead {
+      font-size: 20px;
+      font-weight: 400;
+      color: #e2e8f0;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Fixed Button & Sized Star Micro-Interactions */
+    .custom-explore-btn {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .custom-explore-btn button {
+      position: relative;
+      padding: 14px 32px;
+      background: #8b0000;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      border: 2px solid #8b0000;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .custom-explore-btn button:hover {
+      background: transparent;
+      color: #ff4d4d;
+      border-color: #ff4d4d;
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.55);
+      transform: translateY(-2px);
+    }
+
+    /* Absolute constraints on button star elements to prevent overflow */
+    .custom-explore-btn .star-icon {
+      position: absolute;
+      width: 14px !important;
+      height: 14px !important;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .custom-explore-btn .star-1 { top: 20%; left: 20%; }
+    .custom-explore-btn .star-2 { top: 45%; left: 45%; }
+    .custom-explore-btn .star-3 { top: 40%; left: 80%; }
+    .custom-explore-btn .star-4 { top: 10%; left: 60%; }
+    .custom-explore-btn .star-5 { top: 70%; left: 30%; }
+    .custom-explore-btn .star-6 { top: 80%; left: 75%; }
+
+    .custom-explore-btn button:hover .star-icon {
+      opacity: 1;
+    }
+
+    .custom-explore-btn button:hover .star-1 { transform: translate(-35px, -30px) scale(1.4); }
+    .custom-explore-btn button:hover .star-2 { transform: translate(35px, -35px) scale(1.2); }
+    .custom-explore-btn button:hover .star-3 { transform: translate(30px, 30px) scale(1.3); }
+    .custom-explore-btn button:hover .star-4 { transform: translate(-25px, 25px) scale(1.1); }
+    .custom-explore-btn button:hover .star-5 { transform: translate(-20px, -20px) scale(1.3); }
+    .custom-explore-btn button:hover .star-6 { transform: translate(25px, 20px) scale(1.2); }
+
+    /* ==========================================================================
+       5. ABOUT US SECTION
+       ========================================================================== */
+    .about-section {
+      width: 100%;
+      background-color: #f8fafc;
+      padding: 90px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-container {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .about-content-half {
+      flex: 1;
+      max-width: 660px;
+    }
+
+    .about-tag {
+      display: inline-block;
+      background-color: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .about-title {
+      font-weight: 700;
+      font-size: 42px;
+      color: #111827;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .about-title span {
+      color: #dc2626;
+    }
+
+    .about-desc {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1f2937;
+      padding: 10px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+
+    .about-feature-item:hover {
+      transform: translateX(4px);
+      border-color: #dc2626;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
+    }
+
+    .about-feature-item svg {
+      width: 20px !important;
+      height: 20px !important;
+      fill: #dc2626 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .about-visual-half {
+      flex: 1;
+      max-width: 600px;
+      height: 400px;
+      background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #374151;
+    }
+
+    .visual-badge {
+      font-size: 64px;
+      font-weight: 800;
+      color: #dc2626;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .visual-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f3f4f6;
+    }
+
+    /* ==========================================================================
+       6. SERVICES SECTION & SLIDER
+       ========================================================================== */
+    .services-section {
+      padding: 90px 20px;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+
+    .services-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px auto;
+    }
+
+    .services-title {
+      font-size: 38px;
+      color: #111827;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .services-title span {
+      color: #dc2626;
+    }
+
+    .services-desc {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .slider-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .slider-viewport {
+      overflow: hidden;
+      width: 100%;
+      padding: 10px 5px 30px 5px;
+    }
+
+    .services-grid {
+      display: flex;
+      gap: 25px;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    .service-card {
+      flex: 0 0 290px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(220, 38, 38, 0.12);
+      border-color: #dc2626;
+    }
+
+    .black-box {
+      width: 56px;
+      height: 56px;
+      background: #111827;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .service-card:hover .black-box {
+      background: #dc2626;
+      transform: scale(1.06);
+    }
+
+    .black-box img {
+      width: 28px !important;
+      height: 28px !important;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .service-name {
+      font-size: 18px;
+      color: #111827;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .service-text {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 600;
+      color: #dc2626;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 16px;
+    }
+
+    .card-action svg {
+      width: 16px !important;
+      height: 16px !important;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .card-action svg {
+      transform: translateX(5px);
+    }
+
+    /* Slider Controls */
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 25px;
+      padding: 0 10px;
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #d1d5db;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      width: 24px;
+      border-radius: 5px;
+      background-color: #dc2626;
+    }
+
+    .slider-arrows {
+      display: flex;
+      gap: 12px;
+    }
+
+    .arrow-btn {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .arrow-btn:hover {
+      background: #dc2626;
+      border-color: #dc2626;
+    }
+
+    .arrow-btn svg {
+      width: 18px !important;
+      height: 18px !important;
+      fill: #374151;
+      transition: fill 0.3s ease;
+    }
+
+    .arrow-btn:hover svg {
+      fill: #ffffff;
+    }
+
+    /* ==========================================================================
+       7. INDUSTRIES WE SERVE SECTION
+       ========================================================================== */
+    .industries-section {
+      padding: 90px 20px;
+      background-color: #f8fafc;
+      overflow: hidden;
+    }
+
+    .industries-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px auto;
+    }
+
+    .industries-title {
+      font-size: 38px;
+      color: #111827;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .industries-title span {
+      color: #dc2626;
+    }
+
+    .industries-desc {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .industries-grid-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .industry-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-8px);
+      border-color: #dc2626;
+      box-shadow: 0 14px 30px rgba(220, 38, 38, 0.12);
+    }
+
+    .industry-icon-box {
+      width: 52px;
+      height: 52px;
+      background: #111827;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .industry-card:hover .industry-icon-box {
+      background: #dc2626;
+      transform: scale(1.05);
+    }
+
+    .industry-icon-box svg {
+      width: 24px !important;
+      height: 24px !important;
+      stroke: #ffffff;
+    }
+
+    .industry-name {
+      font-size: 18px;
+      color: #111827;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .industry-text {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       8. SCROLL ANIMATIONS ENGINE
+       ========================================================================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       9. RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .about-container {
+        flex-direction: column;
+      }
+      .about-visual-half {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+      }
+      .brand-gradient-white-glow {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .top-bar-left {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .main-nav {
+        height: auto;
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-links a {
+        width: 100%;
+        justify-content: center;
+      }
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+      }
+      .hero-section {
+        padding: 60px 20px;
+      }
+      .brand-gradient-white-glow {
+        font-size: 32px;
+      }
+      .hero-lead {
+        font-size: 16px;
+      }
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Top Utility Bar -->
-  <aside class="top-bar">
+  <header class="top-bar">
     <div class="top-bar-left">
       <a href="tel:9818701683" class="info-item">
         <img src="call.png" alt="Call Icon">
@@ -40,39 +945,34 @@
       </div>
     </div>
     <div class="top-bar-right">
-      <a href="tel:9818701683" class="btn-contact-fly" aria-label="Contact Us by phone">
-        <div class="svg-wrapper-1">
-          <div class="svg-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-            </svg>
-          </div>
-        </div>
+      <a href="tel:9818701683" class="btn-contact-fly">
+        <svg viewBox="0 0 24 24">
+          <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+        </svg>
         <span>Contact Us</span>
       </a>
     </div>
-  </aside>
+  </header>
 
-  <!-- Sticky Navbar Wrapper -->
-  <header class="nav-container" id="mainHeader">
+  <!-- Main Navigation Bar -->
+  <div class="nav-container" id="navContainer">
     <div class="aura-wrapper nav-aura-wrapper">
       <nav class="main-nav">
-        <!-- Logo -->
+        <!-- Logo & Title -->
         <a href="index.html" class="brand-logo">
-          <img src="DSF_logo_small.png" alt="DS Safety Systems Logo">
+          <img src="DSF_logo_small.png" alt="DS Safety Systems Logo" width="46" height="46">
           <span class="brand-title">DS Safety Systems</span>
         </a>
 
         <!-- Links -->
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-item">Home</a></li>
-          <li><a href="#about" class="nav-item">About Us</a></li>
-          <li><a href="#services" class="nav-item">Services</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
           <li class="dropdown-parent">
-            <a href="javascript:void(0);" class="nav-item dropdown-toggle" id="productDropdownBtn">
+            <a href="javascript:void(0);" onclick="toggleDropdown(event)">
               Products 
-              <svg viewBox="0 0 20 20" width="12" height="12"><path fill="currentColor" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+              <svg viewBox="0 0 20 20" width="10" height="10"><path fill="currentColor" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
             </a>
             <ul class="dropdown-menu" id="productDropdownMenu">
               <li><a href="#products">ABC Powder Extinguisher</a></li>
@@ -86,38 +986,37 @@
               <li><a href="#products">Red Fire Bucket Stand</a></li>
             </ul>
           </li>
-          <li><a href="#industries" class="nav-item">Industries</a></li>
+          <li><a href="#industries">Industries</a></li>
         </ul>
 
-        <!-- Right Action Button -->
+        <!-- CTA -->
         <div class="nav-right">
-          <div class="aura-wrapper quote-aura-wrapper">
+          <div class="aura-wrapper">
             <a href="tel:9818701683" class="btn-get-started">Get a quote</a>
           </div>
         </div>
       </nav>
     </div>
-  </header>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
     <div class="hero-overlay"></div>
-    <div class="hero-ambient-glow"></div>
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="brand-gradient-white-glow animate-hero">Advanced Fire Protection & Safety Solutions</h1>
-        <p class="hero-lead animate-hero">Safeguarding residential, commercial, and industrial properties with BIS-certified fire fighting equipment, precision installations, and dependable 24/7 AMC maintenance services in New Delhi.</p>
+        <h1 class="brand-gradient-white-glow fade-up">Advanced Fire Protection & Safety Solutions</h1>
+        <p class="hero-lead fade-up">Safeguarding residential, commercial, and industrial properties with BIS-certified fire fighting equipment, precision installations, and dependable 24/7 AMC maintenance services in New Delhi.</p>
 
-        <div class="hero-actions animate-hero">
+        <div class="hero-actions fade-up">
           <a href="#products" class="custom-explore-btn">
             <button type="button">
               Explore Products
-              <div class="star-1 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
-              <div class="star-2 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
-              <div class="star-3 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
-              <div class="star-4 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
-              <div class="star-5 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
-              <div class="star-6 star-icon"><svg viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg></div>
+              <svg class="star-icon star-1" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
+              <svg class="star-icon star-2" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
+              <svg class="star-icon star-3" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
+              <svg class="star-icon star-4" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
+              <svg class="star-icon star-5" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
+              <svg class="star-icon star-6" viewBox="0 0 784.11 815.53"><path fill="#fffdef" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path></svg>
             </button>
           </a>
         </div>
@@ -128,12 +1027,14 @@
   <!-- About Us Section -->
   <section class="about-section" id="about">
     <div class="about-container">
-      <div class="about-content-half scroll-reveal from-left">
+      <div class="about-content-half fade-up">
         <span class="about-tag">About DS Safety Systems</span>
         <h2 class="about-title">Dedicated to Protecting Lives & Property in <span>New Delhi</span></h2>
+
         <p class="about-desc">
           Based in Govind Puri, New Delhi, DS Safety Systems delivers industry-leading fire protection solutions backed by over <strong>15 years of professional experience</strong>. From supplying certified fire extinguishers and hydrant setups to managing comprehensive Annual Maintenance Contracts (AMC), our certified experts ensure your premises remain fully compliant and secure.
         </p>
+
         <div class="about-features">
           <div class="about-feature-item">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -154,26 +1055,21 @@
         </div>
       </div>
 
-      <div class="about-visual-half scroll-reveal from-right">
-        <div class="visual-glass-card">
-          <div class="visual-badge">
-            <span class="badge-num">15+</span>
-            <span class="badge-lbl">Years Of Fire Safety Excellence</span>
-          </div>
-          <p class="visual-tagline">Certified • Inspected • Compliant</p>
-        </div>
+      <div class="about-visual-half fade-up">
+        <div class="visual-badge">15+</div>
+        <div class="visual-text">Years of Trusted Protection</div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
   <section class="services-section" id="services">
-    <div class="services-header scroll-reveal">
+    <div class="services-header fade-up">
       <h2 class="services-title">Our Complete Range of <span>Safety Services</span></h2>
       <p class="services-desc">Professional installation, regular testing, compliance auditing, and round-the-clock protection solutions designed for complete peace of mind.</p>
     </div>
 
-    <div class="slider-container scroll-reveal" id="sliderContainer">
+    <div class="slider-container fade-up">
       <div class="slider-viewport">
         <div class="services-grid" id="servicesGrid">
 
@@ -181,7 +1077,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="fire..png" alt="Fire Extinguisher Icon" onerror="this.src='pin.png'">
+                <img src="fire..png" alt="Extinguisher Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">Fire Extinguisher Services</h3>
               <p class="service-text">Supply, annual maintenance, refilling, and hydro-testing of all portable units.</p>
@@ -196,7 +1092,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="maintenance.png" alt="AMC & Maintenance Icon" onerror="this.src='pin.png'">
+                <img src="maintenance.png" alt="AMC Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">AMC & Maintenance Services</h3>
               <p class="service-text">Comprehensive annual maintenance contracts ensuring complete compliance.</p>
@@ -211,7 +1107,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="hydrant.png" alt="Fire Hydrant Icon" onerror="this.src='pin.png'">
+                <img src="hydrant.png" alt="Hydrant Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">Fire Hydrant Services</h3>
               <p class="service-text">Complete installation and pressure pipeline setup for robust industrial networks.</p>
@@ -226,7 +1122,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="sprinkler.png.png" alt="Fire Sprinkler Icon" onerror="this.src='pin.png'">
+                <img src="sprinkler.png.png" alt="Sprinkler Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">Fire Sprinkler Services</h3>
               <p class="service-text">Automated ceiling grid suppression systems designed for immediate response.</p>
@@ -241,7 +1137,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="smoke-detector.png" alt="Smoke Detector Icon" onerror="this.src='pin.png'">
+                <img src="smoke-detector.png" alt="Alarm Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">Fire Alarm Services</h3>
               <p class="service-text">Conventional and addressable smoke detectors and control monitoring panels.</p>
@@ -256,7 +1152,7 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="water-hose.png" alt="Fire Hose Icon" onerror="this.src='pin.png'">
+                <img src="water-hose.png" alt="Hose Icon" onerror="this.src='pin.png'">
               </div>
               <h3 class="service-name">Fire Hose & Reel Services</h3>
               <p class="service-text">Wall-mounted swinging fire hose drums and reinforced rubber hosing.</p>
@@ -271,9 +1167,9 @@
           <a href="#services" class="service-card">
             <div class="card-top">
               <div class="service-icon black-box">
-                <img src="exit.png" alt="Emergency Exit Icon" onerror="this.src='pin.png'">
+                <img src="exit.png" alt="Exit Icon" onerror="this.src='pin.png'">
               </div>
-              <h3 class="service-name">Emergency Signage</h3>
+              <h3 class="service-name">Emergency Exit Signage</h3>
               <p class="service-text">Photoluminescent exit indicators, floor path markers, and safety notices.</p>
             </div>
             <div class="card-action">
@@ -287,7 +1183,12 @@
 
       <!-- Controls -->
       <div class="slider-controls">
-        <div class="slider-dots" id="sliderDots"></div>
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
         <div class="slider-arrows">
           <button class="arrow-btn" onclick="moveSlide(-1)" aria-label="Previous Slide">
             <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
@@ -300,9 +1201,9 @@
     </div>
   </section>
 
-  <!-- Industries Section -->
+  <!-- Industries We Serve Section -->
   <section class="industries-section" id="industries">
-    <div class="industries-header scroll-reveal">
+    <div class="industries-header fade-up">
       <h2 class="industries-title">Industries <span>We Serve</span></h2>
       <p class="industries-desc">Providing certified fire safety equipment, installation, and maintenance tailored to the unique safety standards of every sector.</p>
     </div>
@@ -310,190 +1211,18 @@
     <div class="industries-grid-container">
       <div class="industries-grid">
 
-        <div class="industry-card scroll-reveal">
+        <div class="industry-card fade-up">
           <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="15" y2="6"></line><line x1="9" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="15" y2="6"></line><line x1="9" y1="10" x2="15" y2="10"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
           </div>
           <h3 class="industry-name">Commercial & Offices</h3>
           <p class="industry-text">Complete fire safety compliance, extinguishers, and smoke detection systems for corporate workspaces.</p>
         </div>
 
-        <div class="industry-card scroll-reveal">
+        <div class="industry-card fade-up">
           <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
           </div>
           <h3 class="industry-name">Residential Societies</h3>
           <p class="industry-text">High-rise building hydrant networks, hose reels, and regular maintenance for housing societies.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8h5v12M14 20V4h5v16"/></svg>
-          </div>
-          <h3 class="industry-name">Industrial & Factories</h3>
-          <p class="industry-text">Heavy-duty suppression systems, foam extinguishers, and safety audits for manufacturing units.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-          </div>
-          <h3 class="industry-name">Warehouses & Storage</h3>
-          <p class="industry-text">Large-scale sprinkler installations and fire hazard management for logistics and storage hubs.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-          </div>
-          <h3 class="industry-name">Schools & Colleges</h3>
-          <p class="industry-text">Student safety planning, accessible extinguisher placement, and regular mock drills guidance.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-          </div>
-          <h3 class="industry-name">Hospitals & Healthcare</h3>
-          <p class="industry-text">Critical care unit safety protocols, alarm integration, and strict compliance maintenance.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"></path></svg>
-          </div>
-          <h3 class="industry-name">Hotels & Hospitality</h3>
-          <p class="industry-text">Emergency exit path lighting, guest room safety signage, and multi-zone alarm setups.</p>
-        </div>
-
-        <div class="industry-card scroll-reveal">
-          <div class="industry-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-          </div>
-          <h3 class="industry-name">Retail & Shopping Malls</h3>
-          <p class="industry-text">High-footfall evacuation planning, automated sprinkler protection, and fire safety systems.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive JavaScript -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // 1. Intersection Observer for Scroll Animations
-      const revealElements = document.querySelectorAll(".scroll-reveal");
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-      });
-
-      revealElements.forEach((el, index) => {
-        // Stagger cards in grids
-        if (el.classList.contains("industry-card")) {
-          el.style.transitionDelay = `${(index % 4) * 0.1}s`;
-        }
-        revealObserver.observe(el);
-      });
-
-      // 2. Sticky Navbar Glass Effect
-      const header = document.getElementById("mainHeader");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 40) {
-          header.classList.add("nav-scrolled");
-        } else {
-          header.classList.remove("nav-scrolled");
-        }
-      }, { passive: true });
-
-      // 3. Dropdown Menu Toggle
-      const dropdownToggle = document.getElementById("productDropdownBtn");
-      const dropdownMenu = document.getElementById("productDropdownMenu");
-
-      dropdownToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        dropdownMenu.classList.toggle("show");
-      });
-
-      window.addEventListener("click", (e) => {
-        if (!e.target.closest(".dropdown-parent")) {
-          dropdownMenu.classList.remove("show");
-        }
-      });
-
-      // 4. Services Slider Implementation
-      initSlider();
-    });
-
-    let currentIndex = 0;
-    const grid = document.getElementById("servicesGrid");
-    const dotsContainer = document.getElementById("sliderDots");
-    const totalCards = 7;
-
-    function getCardsPerView() {
-      if (window.innerWidth <= 640) return 1;
-      if (window.innerWidth <= 1024) return 2;
-      return 4;
-    }
-
-    function buildDots() {
-      dotsContainer.innerHTML = "";
-      const maxIndex = Math.max(0, totalCards - getCardsPerView());
-      for (let i = 0; i <= maxIndex; i++) {
-        const dot = document.createElement("span");
-        dot.className = `dot ${i === currentIndex ? "active" : ""}`;
-        dot.addEventListener("click", () => currentSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-    }
-
-    function updateSlider() {
-      const cardsPerView = getCardsPerView();
-      const maxIndex = Math.max(0, totalCards - cardsPerView);
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-      const card = document.querySelector(".service-card");
-      if (!card) return;
-      const cardWidth = card.offsetWidth;
-      const gap = 24;
-      const offset = currentIndex * (cardWidth + gap);
-      grid.style.transform = `translateX(-${offset}px)`;
-
-      const dots = document.querySelectorAll(".dot");
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("active", index === currentIndex);
-      });
-    }
-
-    function moveSlide(direction) {
-      const cardsPerView = getCardsPerView();
-      const maxIndex = Math.max(0, totalCards - cardsPerView);
-      currentIndex += direction;
-      if (currentIndex < 0) currentIndex = maxIndex;
-      else if (currentIndex > maxIndex) currentIndex = 0;
-      updateSlider();
-    }
-
-    function currentSlide(index) {
-      currentIndex = index;
-      updateSlider();
-    }
-
-    function initSlider() {
-      buildDots();
-      updateSlider();
-      window.addEventListener("resize", () => {
-        buildDots();
-        updateSlider();
-      });
-    }
-  </script>
-</body>
-</html>
+        </di
