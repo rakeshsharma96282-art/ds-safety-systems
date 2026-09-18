@@ -271,12 +271,148 @@ body {
 html {
   scroll-behavior: smooth;
 }
-/* --- Services Section Styles --- */
+
+/* ==========================================================================
+   DS SAFETY SYSTEMS - SERVICES SECTION & CINEMATIC ATMOSPHERE STYLES
+   ========================================================================== */
+
 .services-section {
+  position: relative;
   padding: 80px 20px;
-  background-color: #f9fafb;
+  background-color: #ffffff; /* Strictly pure white background */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
+}
+
+/* --- CINEMATIC WHITE INDUSTRIAL BACKGROUND LAYERS --- */
+
+/* Layer 1: Faint Engineering Grid */
+.eng-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.022) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 2: Rotating Technical Engineering Schematics */
+.eng-schematic-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(220, 38, 38, 0.07);
+  pointer-events: none;
+  z-index: 1;
+  animation: slow-rotate 120s linear infinite;
+}
+
+.eng-schematic-circle-solid {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.025);
+  pointer-events: none;
+  z-index: 1;
+  animation: slow-rotate-reverse 150s linear infinite;
+}
+
+@keyframes slow-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slow-rotate-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Layer 3: Soft Atmospheric Red Glow Tracking Active Card */
+.active-card-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.06) 0%, rgba(239, 68, 68, 0.01) 50%, transparent 75%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(35px);
+}
+
+/* Layer 4: Technical Connection Lines & Nodes */
+.tech-connection-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.tech-line {
+  stroke: rgba(0, 0, 0, 0.04);
+  stroke-width: 1;
+  stroke-dasharray: 4 8;
+  animation: dash-move 30s linear infinite;
+}
+
+.tech-line-red {
+  stroke: rgba(239, 68, 68, 0.2);
+  stroke-width: 1.5;
+}
+
+@keyframes dash-move {
+  to { stroke-dashoffset: -200; }
+}
+
+/* Layer 5: Floating Industrial Dust Particles */
+.tech-particle {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: float-particle 18s ease-in-out infinite;
+}
+
+.tech-particle-red {
+  background-color: rgba(239, 68, 68, 0.18);
+  animation-duration: 22s;
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-30px) translateX(15px); }
+}
+
+/* Layer 6: Soft Cinematic Light Sweep */
+.cinematic-light-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), rgba(239, 68, 68, 0.025), transparent);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  animation: light-sweep-anim 8s ease-in-out infinite;
+}
+
+@keyframes light-sweep-anim {
+  0% { left: -140px; opacity: 0; }
+  20% { opacity: 0.5; }
+  50% { left: 105%; opacity: 0.5; }
+  100% { left: 105%; opacity: 0; }
+}
+
+
+/* --- FOREGROUND CONTENT & HEADER STYLES --- */
+
+.services-content-layer {
+  position: relative;
+  z-index: 3;
 }
 
 .services-header {
@@ -310,7 +446,9 @@ html {
   line-height: 1.6;
 }
 
-/* Slider Container */
+
+/* --- SLIDER & CONTAINER STYLES --- */
+
 .slider-container {
   max-width: 1240px;
   margin: 0 auto;
@@ -337,7 +475,9 @@ html {
   will-change: transform;
 }
 
-/* Service Card Design */
+
+/* --- SERVICE CARD DESIGN --- */
+
 .service-card {
   flex: 0 0 295px;
   background: #ffffff;
@@ -362,7 +502,9 @@ html {
   transform: scale(0.97);
 }
 
-/* Card Elements */
+
+/* --- CARD ELEMENTS --- */
+
 .black-box {
   width: 60px;
   height: 60px;
@@ -423,7 +565,9 @@ html {
   transform: translateX(5px);
 }
 
-/* Slider Navigation Controls */
+
+/* --- SLIDER NAVIGATION CONTROLS --- */
+
 .slider-controls {
   display: flex;
   align-items: center;
@@ -488,7 +632,9 @@ html {
   transition: fill 0.3s ease;
 }
 
-/* Responsive adjustments */
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
 @media (max-width: 1200px) {
   .slider-container {
     max-width: 615px;
@@ -503,6 +649,7 @@ html {
     font-size: 1.8rem;
   }
 }
+
 /* --- Industries We Serve Styles --- */
 .industries-section {
   padding: 90px 20px;
