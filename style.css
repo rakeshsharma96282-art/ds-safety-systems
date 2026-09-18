@@ -728,22 +728,22 @@ html {
     transform: translateY(0);
   }
 }
-
-/* Initial hidden state for animated elements */
+/* Force elements visible immediately without waiting for JS observer */
 #servicesHeader, 
 #sliderContainer, 
 #industriesHeader, 
 #industriesGrid {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Visible state triggered by JavaScript */
-#servicesHeader.is-visible, 
-#sliderContainer.is-visible, 
-#industriesHeader.is-visible, 
-#industriesGrid.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.dropdown-parent:hover .dropdown-menu {
+  display: block !important;
+}
+.dropdown-menu {
+  display: none;
+}
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
 }
