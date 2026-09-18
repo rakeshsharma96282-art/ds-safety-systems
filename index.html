@@ -1107,8 +1107,7 @@
   <!-- END: Services Section -->
 
 
-  <!-- 3D Cinematic Products Showcase Section (#products) -->
-  <div id="products">
+<div id="products" style="min-height: 900px;">
     <!-- MAIN CATALOG VIEW -->
     <section x-show="!activeProduct" id="catalog" class="relative pt-16 sm:pt-20 pb-40 px-4 sm:px-8 max-w-[1600px] mx-auto z-25">
       <div class="text-center mb-10 relative z-25">
@@ -1852,7 +1851,7 @@
             this.activeProduct = product;
             this.currentSlide = 0; 
             this.quoteClicked = false;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+          
             setTimeout(() => { cardEl.classList.remove('card-clicked-animation'); }, 300);
           }, 250);
         },
@@ -1861,7 +1860,7 @@
           this.selectedCapacity = null;
           this.currentSlide = 0;
           this.quoteClicked = false;
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          
         },
         handleScroll() {
           const scrollY = window.scrollY;
