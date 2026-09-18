@@ -271,245 +271,224 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-<!-- SERVICES SECTION -->
-
 /* --- Services Section Styles --- */
 .services-section {
-  padding: 80px 20px;
-  background-color: #f9fafb;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
+  padding: 80px 20px;
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 .services-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .services-header.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .services-title {
-  font-size: 2.2rem;
-  color: #111827;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .services-title span {
-  color: #dc2626; /* Accent red for safety emphasis */
+  color: #dc2626; /* Accent red for safety emphasis */
 }
 
 .services-desc {
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
 /* Slider Container */
 .slider-container {
-  max-width: 1240px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+  max-width: 1240px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
 .slider-container.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slider-viewport {
-  overflow: hidden;
-  width: 100%;
-  padding: 10px 5px 30px 5px;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 5px 30px 5px;
 }
 
 .services-grid {
-  display: flex;
-  gap: 25px;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform;
+  display: flex;
+  gap: 25px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 /* Service Card Design */
 .service-card {
-  flex: 0 0 295px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 30px 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
-  border: 1px solid #e5e7eb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  flex: 0 0 295px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.12);
-  border-color: #dc2626;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.12);
+  border-color: #dc2626;
 }
 
 .service-card.is-clicked {
-  transform: scale(0.97);
+  transform: scale(0.97);
 }
 
 /* Card Elements */
 .black-box {
-  width: 60px;
-  height: 60px;
-  background: #111827;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
+  width: 60px;
+  height: 60px;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .service-card:hover .black-box {
-  background: #dc2626;
+  background: #dc2626;
 }
 
 .black-box img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* Makes custom icons white */
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes custom icons white */
 }
 
 .service-name {
-  font-size: 1.25rem;
-  color: #111827;
-  font-weight: 600;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  font-size: 1.25rem;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .service-text {
-  font-size: 0.92rem;
-  color: #6b7280;
-  line-height: 1.5;
-  margin-bottom: 24px;
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .card-action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #dc2626;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #dc2626;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 16px;
 }
 
 .card-action svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  transition: transform 0.3s ease;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover .card-action svg {
-  transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 /* Slider Navigation Controls */
 .slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 25px;
-  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 0 10px;
 }
 
 .slider-dots {
-  display: flex;
-  gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #d1d5db;
-  cursor: pointer;
-  transition: background-color 0.3s ease, width 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
 }
 
 .dot.active {
-  width: 24px;
-  border-radius: 5px;
-  background-color: #dc2626;
+  width: 24px;
+  border-radius: 5px;
+  background-color: #dc2626;
 }
 
 .slider-arrows {
-  display: flex;
-  gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .arrow-btn {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
 .arrow-btn:hover {
-  background: #dc2626;
-  border-color: #dc2626;
-  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
 }
 
 .arrow-btn:hover svg {
-  fill: #ffffff;
+  fill: #ffffff;
 }
 
 .arrow-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: #374151;
-  transition: fill 0.3s ease;
+  width: 20px;
+  height: 20px;
+  fill: #374151;
+  transition: fill 0.3s ease;
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
-  .slider-container {
-    max-width: 615px;
-  }
-}
-
-@media (max-width: 650px) {
-  .slider-container {
-    max-width: 295px;
-  }
-  .services-title {
-    font-size: 1.8rem;
-  }
-} 
-
-
-/* --- RESPONSIVE ADJUSTMENTS --- */
-
 @media (max-width: 1200px) {
   .slider-container {
     max-width: 615px;
@@ -524,7 +503,6 @@ html {
     font-size: 1.8rem;
   }
 }
-
 /* --- Industries We Serve Styles --- */
 .industries-section {
   padding: 90px 20px;
@@ -768,22 +746,4 @@ html {
 }
 .dropdown-parent:hover .dropdown-menu {
   display: block;
-}
-
-/* --- FORCE RENDER TEST --- */
-.services-section {
-  position: relative !important;
-  background-color: #ffffff !important;
-}
-.eng-grid-bg {
-  position: absolute !important;
-  inset: 0 !important;
-  background-image: linear-gradient(to right, rgba(220, 38, 38, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(220, 38, 38, 0.08) 1px, transparent 1px) !important;
-  background-size: 40px 40px !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
-}
-.services-content-layer {
-  position: relative !important;
-  z-index: 3 !important;
 }
