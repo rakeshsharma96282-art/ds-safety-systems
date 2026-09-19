@@ -1,6 +1,77 @@
 // 1. Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Register GSAP ScrollTrigger Plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Services Section Scrub Timeline with Pinning
+let servicesTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".services-section",
+    pin: true,           // Pin the section while scrolling through the animation
+    start: "top top",    // When top of services section hits top of viewport
+    end: "+=600",        // Distance scrolled before unpinning
+    scrub: 1,            // Smoothly links animation progress to scroll position (1s lag)
+    snap: {
+      snapTo: "labels",  // Snap cleanly to defined timeline labels
+      duration: { min: 0.2, max: 2 },
+      delay: 0.1,
+      ease: "power1.inOut"
+    }
+  }
+});
+
+servicesTl
+  .addLabel("start")
+  .from(".services-section h2, .services-section p", { 
+      y: -30, 
+      autoAlpha: 0, 
+      duration: 0.5 
+  })
+  .addLabel("cards")
+  .from(".services-section .card, .services-section .service-card", { 
+      y: 50, 
+      autoAlpha: 0, 
+      stagger: 0.2, 
+      duration: 0.8,
+      force3D: true 
+  })
+  .addLabel("end");
+
+// 2. Industries Section Scrub Timeline with Pinning
+let industriesTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".industries-section",
+    pin: true,
+    start: "top top",
+    end: "+=600",
+    scrub: 1,
+    snap: {
+      snapTo: "labels",
+      duration: { min: 0.2, max: 2 },
+      delay: 0.1,
+      ease: "power1.inOut"
+    }
+  }
+});
+
+industriesTl
+  .addLabel("start")
+  .from(".industries-section h2, .industries-section p", { 
+      y: -30, 
+      autoAlpha: 0, 
+      duration: 0.5 
+  })
+  .addLabel("cards")
+  .from(".industries-section .card, .industries-section .industry-card", { 
+      y: 50, 
+      autoAlpha: 0, 
+      stagger: 0.2, 
+      duration: 0.8,
+      force3D: true 
+  })
+  .addLabel("end");
+
 // 2. About Us Section Timeline
 const aboutTl = gsap.timeline({
     scrollTrigger: {
