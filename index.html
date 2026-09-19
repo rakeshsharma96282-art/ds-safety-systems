@@ -1355,3 +1355,31 @@
     }
   };
 </script>
+
+<!-- All your regular website content goes above here -->
+
+    <!-- 1. GSAP & ScrollTrigger CDN Links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- 2. Your Custom Animation Code -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        gsap.from(".hero > *", {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>
+
+<div class="services-grid">
+    <div class="card">Service 1</div>
+    <div class="card">Service 2</div>
+    <div class="card">Service 3</div>
+</div>
